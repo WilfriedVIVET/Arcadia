@@ -1,0 +1,14 @@
+		
+			ARCADIA
+
+Kanban,
+charte graphique,
+git hub (branch principale et developpement,
+fichier README,
+BDD SQL et noSQL
+Manuel d'utilisation
+
+wireframe et mockup (x3 desktop et mobile)
+
+Documentation technique (reflection et techno)
+
