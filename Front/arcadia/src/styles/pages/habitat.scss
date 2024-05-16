@@ -1,0 +1,36 @@
+
+.body-habitat{
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    background-color: $herbe;
+
+    >.header-habitat{
+        height: 300px;
+        width: 100vw;
+        background-image: url("../../assets/deco/habitat.jpg");
+        background-size: cover;
+        
+        >span{
+            position: absolute;
+            top: 30%;
+            left: 20%;
+            color: $terre;
+            font-size: 1.8em;
+            text-decoration: underline;
+        }
+    }
+
+    >.container-habitats{
+        min-height: 120vh;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        align-items: center;
+        
+    }
+}

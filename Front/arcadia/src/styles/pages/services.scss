@@ -1,0 +1,23 @@
+.body-services{
+    
+    height: 100vh;
+    width: 100vw;
+    background-color: $herbe;
+
+    >.header-services{
+        height: 50%;
+        width: 100%;
+        background-image: url("../../assets/deco/pont.jpg");
+        background-size: cover;
+
+        >span{
+            position: absolute;
+            top: 30%;
+            left: 20%;
+            color: $terre;
+            font-size: 1.8em;
+            text-decoration: underline;
+        }
+        
+    }
+}

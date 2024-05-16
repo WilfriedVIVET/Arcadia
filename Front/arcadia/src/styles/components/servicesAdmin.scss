@@ -1,0 +1,84 @@
+
+.services-admin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding-top: 20px;
+  
+  >.service-admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 95%;
+    padding: 10px;
+    color: $text;
+    border-bottom: 2px solid $terre;
+    
+    
+    >.input-nomService{
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: $herbe;
+      color: $text;
+      height: 50px;
+      padding: 5px;
+      width: 95%;
+      border: none;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+    }
+    
+    >.textArea-descriptionService{
+      height: 80px;
+      width: 95%;
+      background-color: $herbe;
+      color: $text;
+      padding: 5px;
+      resize: none;
+      border: none;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+  }
+}
+
+.form-service{
+  height: auto;
+  min-height: 250px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  background-color: $herbe;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  justify-content: space-around;
+
+  >label{
+    color: $text;
+  }
+
+  >input, textarea{
+    color: $feuille;
+    width: 95%;
+    font-size: 1em;
+    font-weight: bold;
+    
+    
+  }
+  
+  >textarea{
+    height:80px;
+  }
+}
+
+
+
+
+.service-admin:hover{
+  cursor: pointer;
+}
+

@@ -1,0 +1,139 @@
+
+.accueil{
+    height: auto;
+    width: 100vw;
+
+    >.header{
+        height: 500px;
+        background-image: url("../../assets/deco/fond-header.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        >span{
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            font-size: 2.5em;
+            color: $text;
+            text-shadow: $textShadow;
+        } 
+    }
+}
+       
+.button{
+    width: 180px;
+    height: 30px;
+    margin-left: 40%;
+}
+    
+.description{
+    color: $text;
+    height: 200px;
+    width: 90%;
+    margin: auto;
+    font-size: 1.4em;
+}
+
+.trait{
+    height: 8px;
+    width: 70%;
+    border-radius: 25px;
+    background-color: $terre;
+}
+
+.header-contenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    width: 100%;
+    min-height: 130px;
+}
+
+.container-bloc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    min-height: 500px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+h2{
+    color: $terre;
+    text-decoration: underline;
+}
+
+.herbe{
+    background-color: $herbe;
+}
+
+.feuille{
+    background-color: $feuille;
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+    background-image: url("../../assets/deco/TroisSinges.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.habitats{
+    min-height: 120vh;
+    height: auto;
+    gap: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.carrousel{
+    height: 150px;
+    width: 100%;
+    background-color: white;
+}
+
+.horaire{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 100vw;
+    justify-content: center;
+    margin-left: 50px;
+    >span{
+        font-size: 1.4em;
+        color: $text;
+    }
+}
+
+.animaux{
+    display: flex;
+    height: 350px;
+    width: 100%;
+
+    >ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+    
+        >li{
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $text;
+            text-decoration: dotted;
+        }
+    }
+}

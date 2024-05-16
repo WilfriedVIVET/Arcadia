@@ -1,0 +1,19 @@
+
+.avis{   
+    position: absolute;
+    z-index: 10;
+    
+}
+
+.croix{
+    display: flex;
+    color: $feuille;
+    height: 100%;
+    align-items: center;
+    font-size: 1.8em;
+    border-radius: 5px;
+    margin-left: 30px;
+    
+}
+       
+     

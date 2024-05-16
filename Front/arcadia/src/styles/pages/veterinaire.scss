@@ -1,0 +1,10 @@
+
+.body-veterinaire{
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh;
+    height: auto;
+    background-color: $herbe;
+    width: 100vw;
+    align-items: center;  
+}
