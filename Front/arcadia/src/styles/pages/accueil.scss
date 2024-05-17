@@ -109,10 +109,19 @@ h2{
     height: 350px;
     width: 100vw;
     justify-content: center;
-    margin-left: 50px;
-    >span{
-        font-size: 1.4em;
-        color: $text;
+    align-items: center;
+
+    >.bloc-horaire{
+        height: auto;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+
+
+        >span{
+            font-size: 1.2em;
+            color: $text;
+        }
     }
 }
 

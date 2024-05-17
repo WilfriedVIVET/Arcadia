@@ -9,6 +9,7 @@ import { isEmpty } from "../Utils/Utils";
 import { getServices } from "../Redux/actions/services.action";
 import { getHabitats } from "../Redux/actions/habitats.action";
 import { getAnimaux } from "../Redux/actions/animaux.action";
+import { getHoraire } from "../Redux/actions/horaire.action";
 import { useDispatch, useSelector } from "react-redux";
 import Draggable from "react-draggable";
 import { Link } from "react-router-dom";
@@ -18,15 +19,17 @@ const Accueil = () => {
   const services = useSelector((state) => state.getServices);
   const habitats = useSelector((state) => state.getHabitats);
   const animaux = useSelector((state) => state.getAnimaux);
+  const horaires = useSelector((state) => state.getHoraire);
 
   const [showModalAvis, setShowModalAvis] = useState(false);
 
-  //Récupération des services du zoo.
+  //Récupération des infos du zoo.
   useEffect(() => {
     if (isEmpty(store.getState().getServices)) store.dispatch(getServices());
     if (isEmpty(store.getState().getHabitats)) store.dispatch(getHabitats());
     if (isEmpty(store.getState().getAnimaux)) store.dispatch(getAnimaux());
-  }, [dispatch, services, habitats, animaux]);
+    if (isEmpty(store.getState().getHoraire)) store.dispatch(getHoraire());
+  }, [dispatch, services, habitats, animaux, horaires]);
 
   const handleShowModale = () => {
     setShowModalAvis(!showModalAvis);
@@ -113,13 +116,15 @@ const Accueil = () => {
           <div className="trait"></div>
           <h2>NOS HORAIRES</h2>
           <div className="horaire">
-            <span>Lundi :</span>
-            <span>Mardi :</span>
-            <span>Mercredi :</span>
-            <span>Jeudi :</span>
-            <span>Vendredi :</span>
-            <span>Samedi :</span>
-            <span>Dimanche :</span>
+            {!isEmpty(horaires) &&
+              horaires.map((horaire, index) => (
+                <div className="bloc-horaire" key={index}>
+                  <span>{horaire.jour} :</span>
+                  <span>
+                    {horaire.debut} / {horaire.fin}
+                  </span>
+                </div>
+              ))}
           </div>
         </div>
       </div>

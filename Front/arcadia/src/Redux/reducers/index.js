@@ -4,6 +4,7 @@ import getHabitats from "./habitats.reducer";
 import getAnimaux from "./animaux.reducer";
 import getHabitatComplet from "./habitatComplet.reducer";
 import getInfoAnimal from "./infoAnimal.reducer";
+import getHoraire from "./horaire.reducer";
 
 export default combineReducers({
   getServices,
@@ -11,4 +12,5 @@ export default combineReducers({
   getAnimaux,
   getHabitatComplet,
   getInfoAnimal,
+  getHoraire,
 });

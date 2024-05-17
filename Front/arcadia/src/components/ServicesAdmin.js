@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { isEmpty } from "../Utils/Utils";
-import store from "../Redux/store/store";
-import { getServices } from "../Redux/actions/services.action";
 import { useSelector } from "react-redux";
 import {
   updateService,
@@ -11,7 +9,6 @@ import {
 
 const ServicesAdmin = () => {
   const services = useSelector((state) => state.getServices);
-  const [showAjouter, setShowAjouter] = useState(false);
 
   const [serviceUpdate, setServiceUpdate] = useState({
     index: "",
@@ -20,10 +17,6 @@ const ServicesAdmin = () => {
   });
   const [index, setIndex] = useState({
     index: "",
-  });
-
-  useEffect(() => {
-    if (isEmpty(store.getState().getServices)) store.dispatch(getServices());
   });
 
   //Fonction qui récupére l'index du service cliqué.
@@ -60,11 +53,6 @@ const ServicesAdmin = () => {
     }));
 
     deleteService(index);
-  };
-
-  //Fonction qui ouvre la partie de création d'un service.
-  const handleShowCreate = () => {
-    setShowAjouter(!showAjouter);
   };
 
   //Fonction qui ajoute un service.
@@ -113,11 +101,6 @@ const ServicesAdmin = () => {
           ))}
       </div>
 
-      <div className="bloc-petit-bouton">
-        <button className="petit-bouton " onClick={handleShowCreate}>
-          AJOUTER UN SERVICE
-        </button>
-      </div>
       <div className="form-service">
         <label htmlFor="nom">NOM:</label>
         <input type="text" name="nom" id="nom" onChange={handleNomChange} />
@@ -128,7 +111,7 @@ const ServicesAdmin = () => {
           onChange={handleDescriptionChange}
         ></textarea>
         <button className="button-formulaire" onClick={handleCreate}>
-          VALIDER
+          AJOUTER UN SERVICE
         </button>
       </div>
     </div>
