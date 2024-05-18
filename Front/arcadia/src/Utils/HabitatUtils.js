@@ -1,11 +1,11 @@
 import axios from "axios";
 
-//Modification horaire.
-export const postHoraire = async (newHoraire) => {
+//Modification etat habitat.
+export const postEtatHabitat = async (newEtat) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postHoraire.php",
-      JSON.stringify(newHoraire)
+      "http://localhost/API_ARCADIA/postEtat.php",
+      JSON.stringify(newEtat)
     );
     alert(response.data.message);
   } catch (error) {

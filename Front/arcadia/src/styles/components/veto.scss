@@ -1,0 +1,96 @@
+
+.container-formulaire{
+    height: auto;
+    min-height: 200px;
+    
+    >.body-veto{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 200px;
+        height: auto;
+        width: 90%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+       
+        >.bloc-animal{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 80px;
+            width: 100%;
+            color: $text;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        >.bloc-animal-info{
+            height: auto;
+            min-height: 300px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;  
+        }
+    }
+}
+
+.bloc-habitat{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    
+    >.bloc-button{
+        display: flex;
+        justify-content: flex-end;
+        height: auto;
+        width: 100%;
+        flex-grow: 1;
+        margin-bottom: 20px; 
+    }
+}
+
+.bloc-info{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    color: $text;
+    font-weight: bold;
+    justify-content: space-around;
+    
+    >.date{
+        display: flex;
+        height: auto;
+        width: auto;
+    }
+
+    >span{
+        width: 30%; 
+        font-size: 0.8em;  
+    }
+
+    >input, .span-formulaire{
+        height: 30px;
+        width: 70%;
+        display: flex;
+        border-radius: 25px;
+        padding-left: 10px;
+        background-color: $herbe;
+        color: $text;
+        border: none;
+        align-items: center;
+        font-weight: bold;  
+    }
+}   
+
+form{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+}
+

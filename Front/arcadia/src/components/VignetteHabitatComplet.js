@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { isEmpty } from "../Utils/Utils";
 
 const VignetteHabitatComplet = ({ habitat }) => {
   const infoAnimal = useSelector((state) => state.getInfoAnimal);
@@ -13,7 +14,7 @@ const VignetteHabitatComplet = ({ habitat }) => {
   const toggleInfo = () => {
     setShowInfo(!showInfo);
   };
-  /*
+
   //Récupération de l'index de l'animal selectionné
   const findIndex = (searchAnimal) => {
     const index = infoAnimal.findIndex(
@@ -21,17 +22,21 @@ const VignetteHabitatComplet = ({ habitat }) => {
     );
     return index;
   };
-*/
+
   const handleAnimalInfo = (e) => {
     setAnimal(e.target.textContent);
   };
 
   useEffect(() => {
     const findIndex = (searchAnimal) => {
-      const index = infoAnimal.findIndex(
-        (animal) => animal.prenom === searchAnimal
-      );
-      return index;
+      if (!isEmpty(infoAnimal)) {
+        const index = infoAnimal.findIndex(
+          (animal) => animal.prenom === searchAnimal
+        );
+
+        return index;
+      }
+      return 0;
     };
 
     setIndex(findIndex(animal));
@@ -63,36 +68,13 @@ const VignetteHabitatComplet = ({ habitat }) => {
           </ul>
           <div className="info-animal">
             <img
-              src={
-                infoAnimal[index] != null && infoAnimal[index].image_path !== ""
-                  ? infoAnimal[index].image_path
-                  : null
-              }
-              alt={
-                infoAnimal[index] != null && infoAnimal[index].label !== ""
-                  ? infoAnimal[index].label
-                  : "image animal"
-              }
+              src={infoAnimal[index]?.image_path ?? "logo.png"}
+              alt={infoAnimal[index]?.label ?? "image animal"}
             />
             <div className="info-info">
-              <span>
-                Prénom:{" "}
-                {infoAnimal[index] != null && infoAnimal[index].prenom !== ""
-                  ? infoAnimal[index].prenom
-                  : "Non renseigné"}
-              </span>
-              <span>
-                Race:{" "}
-                {infoAnimal[index] != null && infoAnimal[index].label !== ""
-                  ? infoAnimal[index].label
-                  : "non renseigné"}
-              </span>
-              <span>
-                Etat{" "}
-                {infoAnimal[index] != null && infoAnimal[index].etat !== ""
-                  ? infoAnimal[index].etat
-                  : "non renseigné"}
-              </span>
+              <span>Prénom: {infoAnimal[index]?.prenom ?? ""}</span>
+              <span>Race: {infoAnimal[index]?.label ?? ""}</span>
+              <span>Etat {infoAnimal[index]?.etat ?? ""}</span>
             </div>
           </div>
         </div>

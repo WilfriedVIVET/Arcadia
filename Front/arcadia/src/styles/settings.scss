@@ -11,6 +11,7 @@ $feuille: #273403;
 $herbe:#3d6734;
 $eau:#489dff;
 $text:rgb(252, 252, 252);
+$alert:rgb(182, 55, 55);
 
 $boxShadow:0px 10px 5px 0px rgba(0,0,0,0.75);
 $textShadow: -1px -1px 0 #000,  
@@ -47,13 +48,15 @@ $textShadow: -1px -1px 0 #000,
   align-items: center; 
   min-height: 400px;
   height: auto;
-  width: 80%;
+  width: 90%;
   max-width:600px ;
   background-color: $feuille;
   box-shadow: $boxShadow;
   border-radius: 25px;
-
-  >.header-formulaire{
+  margin-top: 20px;
+}
+ 
+.header-formulaire{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,43 +67,57 @@ $textShadow: -1px -1px 0 #000,
     font-size: 1.1em;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-  }
+
+    >span{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      height: 50px;
+      width: 100%;
+      color: $feuille;
+    }
+}
  
-  >.formulaire{
+.formulaire{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     height: 80%;
     width: 80%;
-    
-    >.formulaire-radio{
+}   
+ 
+.formulaire-radio{
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 50px;
       width: 100%;
-     
-      >.label-radio-formulaire{
+}      
+ 
+.label-radio-formulaire{
         color: $text;
         font-size: 1em;
         font-weight: bold;
-      }
-    }
-
-    >.formulaire-bloc{
+}
+    
+    
+.formulaire-bloc{
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 90px;
       width: 95%;
       
-      >.label-formulaire{
-        color: $text;
-        font-size: 1.3em;
-        font-weight: bold;
-      }
+}
+     
+.label-formulaire{
+  color: $text;
+  font-size: 1.3em;
+  font-weight: bold;
+}    
       
-      >.input-formulaire{
+.input-formulaire{
         height: 40px;
         width: 100%;
         border-radius: 25px;
@@ -109,11 +126,11 @@ $textShadow: -1px -1px 0 #000,
         color: $terre;
         font-size: 1em;
         font-weight: bold;
-        text-transform: uppercase;
         padding-left: 10px;
-      }
+}
+     
       
-      >.textArea-formulaire{
+.textArea-formulaire{
         border-radius: 25px;
         border: 2px solid $terre;
         background-color: $herbe;
@@ -126,11 +143,9 @@ $textShadow: -1px -1px 0 #000,
         padding:10px;
         overflow: auto;
         scrollbar-width: none;
-      }
-      
-    }
-  }
 }
+      
+ 
 
 .button-formulaire{
   height: 40px;
@@ -171,4 +186,26 @@ $textShadow: -1px -1px 0 #000,
     text-transform: uppercase;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.alert{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 35px;
+  width: 95%;
+  border-radius: 25px;
+  border: 2px solid $terre;
+  background-color: $alert;
+  color: $text;
+  font-size: 0.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  visibility: hidden;
+}
+
+.show{
+  visibility: visible;
 }

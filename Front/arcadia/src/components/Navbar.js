@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useAppStore } from "../storeZustand";
+import { isEmpty } from "../Utils/Utils";
 
 const Navbar = () => {
+  const { roleUser, updateRole } = useAppStore();
+
   const [isActive, setIsActive] = useState(true);
 
   const menuBurger = () => {
@@ -53,8 +57,17 @@ const Navbar = () => {
               <NavLink
                 to="/connexion"
                 className={(nav) => (nav.isActive ? "nav-active" : "")}
+                onClick={() => updateRole("")}
               >
-                CONNEXION
+                {isEmpty(roleUser) ? "CONNEXION" : "DECONNEXION"}
+              </NavLink>
+            </li>
+            <li className="li-navbar">
+              <NavLink
+                to={`/${roleUser}`}
+                className={(nav) => (nav.isActive ? "nav-active" : "")}
+              >
+                {!isEmpty(roleUser) && roleUser.toUpperCase()}
               </NavLink>
             </li>
           </ul>

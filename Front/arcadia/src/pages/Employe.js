@@ -7,6 +7,7 @@ const Employe = () => {
     <>
       <div className="body-employe">
         <Navbar />
+        <div className="container-formulaire"></div>
       </div>
       <Footer />
     </>

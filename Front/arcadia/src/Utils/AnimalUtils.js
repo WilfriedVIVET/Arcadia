@@ -1,11 +1,11 @@
 import axios from "axios";
 
-//Modification horaire.
-export const postHoraire = async (newHoraire) => {
+//Modification fiche animal.
+export const postInfoAnimal = async (newInfoAnimal) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postHoraire.php",
-      JSON.stringify(newHoraire)
+      "http://localhost/API_ARCADIA/postInfoAnimal.php",
+      JSON.stringify(newInfoAnimal)
     );
     alert(response.data.message);
   } catch (error) {
