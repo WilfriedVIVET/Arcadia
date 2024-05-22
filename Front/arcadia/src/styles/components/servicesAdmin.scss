@@ -51,7 +51,7 @@
   width: 95%;
   display: flex;
   flex-direction: column;
-  background-color: $herbe;
+  background-color: $feuille;
   align-items: center;
   margin-bottom: 20px;
   border-radius: 25px;
@@ -66,12 +66,16 @@
   >input, textarea{
     color: $feuille;
     width: 95%;
+    height: 50px;
     font-size: 1em;
     font-weight: bold;
+    background-color: $herbe;
+    border-radius: 25px;
   }
   
   >textarea{
     height:80px;
+    resize: none;
   }
 }
 

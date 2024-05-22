@@ -1,52 +1,78 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "../Utils/Utils";
+import store from "../Redux/store/store";
+import { getInfoAnimal } from "../Redux/actions/infoAnimal.action";
 
 const VignetteHabitatComplet = ({ habitat }) => {
-  const infoAnimal = useSelector((state) => state.getInfoAnimal);
-  const listeAnimaux = habitat.liste_animaux.split(",");
+  const dispatch = useDispatch();
+  const animaux = useSelector((state) => state.getAnimaux);
 
-  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    if (isEmpty(store.getState().getInfoAnimal))
+      store.dispatch(getInfoAnimal());
+  }, [dispatch]);
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [index, setIndex] = useState("");
+  const [image, setImage] = useState();
+  const [selectedAnimal, setSelectedAnimal] = useState({});
   const [showInfo, setShowInfo] = useState(false);
-  const [animal, setAnimal] = useState("");
+  const [animals, setAnimals] = useState([]);
+  const [portrait, setPortrait] = useState(false);
+
+  //Attente que animaux finisse de se charger
+  useEffect(() => {
+    if (!isEmpty(animaux)) {
+      setIsLoading(false);
+    }
+  }, [animaux]);
+
+  // Filtrage des animaux par habitat lorsque les animaux sont chargés.
+  useEffect(() => {
+    if (!isLoading) {
+      setAnimals(animaux.filter((animal) => animal.nom === habitat.nom));
+    }
+  }, [animaux, habitat.nom, isLoading]);
+
+  //Remplissage info animal dans vignette.
+  const handleInfo = (animal) => {
+    setSelectedAnimal(animal);
+    setIndex(animal.animal_id);
+    searchImage(index);
+  };
+
+  // Mise à jour de l'image lorsque selectedAnimal change.
+  useEffect(() => {
+    if (selectedAnimal.animal_id) {
+      const animal = animaux.find(
+        (animal) => animal.animal_id === selectedAnimal.animal_id
+      );
+      setImage(animal);
+    }
+  }, [selectedAnimal, animaux]);
+
+  // Récupération de l'image de l'animal via son index.
+  const searchImage = (animalId) => {
+    const animal = animaux.find((animal) => animal.animal_id === animalId);
+    setImage(animal);
+  };
 
   //déploiement de la fenetre info.
   const toggleInfo = () => {
     setShowInfo(!showInfo);
   };
 
-  //Récupération de l'index de l'animal selectionné
-  const findIndex = (searchAnimal) => {
-    const index = infoAnimal.findIndex(
-      (animal) => animal.prenom === searchAnimal
-    );
-    return index;
+  //Grossissement du portrait de l'animal.
+  const showPortrait = () => {
+    setPortrait(!portrait);
   };
-
-  const handleAnimalInfo = (e) => {
-    setAnimal(e.target.textContent);
-  };
-
-  useEffect(() => {
-    const findIndex = (searchAnimal) => {
-      if (!isEmpty(infoAnimal)) {
-        const index = infoAnimal.findIndex(
-          (animal) => animal.prenom === searchAnimal
-        );
-
-        return index;
-      }
-      return 0;
-    };
-
-    setIndex(findIndex(animal));
-  }, [animal, infoAnimal]);
 
   return (
     <div className="habitat">
       <span>{habitat.nom}</span>
       <img
-        src={habitat.image_path}
+        src={`data:image/jpg;base64,${habitat.image_data}`}
         alt={`habitat ${habitat.nom}`}
         onClick={toggleInfo}
       />
@@ -60,21 +86,31 @@ const VignetteHabitatComplet = ({ habitat }) => {
         <span>Nos Pensionnaires:</span>
         <div className="info">
           <ul>
-            {listeAnimaux.map((animal, index) => (
-              <li className="li-animal" key={index} onClick={handleAnimalInfo}>
-                {animal}
-              </li>
-            ))}
+            {!isEmpty(animals) &&
+              animals.map((animal, index) => (
+                <li
+                  className="li-animal"
+                  key={index}
+                  value={animal.prenom}
+                  onClick={() => handleInfo(animal)}
+                >
+                  {animal.prenom}
+                </li>
+              ))}
           </ul>
-          <div className="info-animal">
+          <div className="info-animal" onClick={showPortrait}>
             <img
-              src={infoAnimal[index]?.image_path ?? "logo.png"}
-              alt={infoAnimal[index]?.label ?? "image animal"}
+              className={portrait ? " grand-portrait" : "petit-portrait"}
+              src={
+                image ? `data:image/jpg;base64,${image.image_data}` : "logo.png"
+              }
+              alt={image ? image.prenom : "logo arcadia"}
             />
+
             <div className="info-info">
-              <span>Prénom: {infoAnimal[index]?.prenom ?? ""}</span>
-              <span>Race: {infoAnimal[index]?.label ?? ""}</span>
-              <span>Etat {infoAnimal[index]?.etat ?? ""}</span>
+              <span>Prénom:{selectedAnimal ? selectedAnimal.prenom : ""} </span>
+              <span>Race: {selectedAnimal ? selectedAnimal.label : ""} </span>
+              <span>Etat: {selectedAnimal ? selectedAnimal.etat : ""} </span>
             </div>
           </div>
         </div>

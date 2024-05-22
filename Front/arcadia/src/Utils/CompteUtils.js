@@ -21,8 +21,36 @@ export const getRole = async (account) => {
       "http://localhost/API_ARCADIA/getRole.php",
       JSON.stringify(account)
     );
-    // alert(response.data.role);
+
     return response.data.role;
+  } catch (error) {
+    alert(error);
+    throw error;
+  }
+};
+
+//Modification de l'utilisateur.
+export const updateUser = async (account) => {
+  try {
+    const response = await axios.post(
+      "http://localhost/API_ARCADIA/updateUser.php",
+      JSON.stringify(account)
+    );
+    alert(response.data.message);
+  } catch (error) {
+    alert(error);
+    throw error;
+  }
+};
+
+//Suppression d'un utilisateur.
+export const deleteUser = async (account) => {
+  try {
+    const response = await axios.post(
+      "http://localhost/API_ARCADIA/deleteUser.php",
+      JSON.stringify(account)
+    );
+    alert(response.data.message);
   } catch (error) {
     alert(error);
     throw error;

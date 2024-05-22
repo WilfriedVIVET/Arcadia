@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ServicesAdmin from "../components/ServicesAdmin";
+import InfoAnimaux from "../components/InfoAnimaux";
+import Avis from "../components/Avis";
+import { useDispatch } from "react-redux";
+import { isEmpty } from "../Utils/Utils";
+import store from "../Redux/store/store";
+import { getAvis } from "../Redux/actions/avis.action";
+import backgroundImage from "../assets/deco/employe.png";
 
 const Employe = () => {
+  const dispatch = useDispatch;
+  useEffect(() => {
+    if (isEmpty(store.getState().getAvis)) store.dispatch(getAvis());
+  }, [dispatch]);
   return (
     <>
       <div className="body-employe">
         <Navbar />
-        <div className="container-formulaire"></div>
+        <div className="container-services">
+          <img className="background-image" src={backgroundImage} alt="Pont" />
+        </div>
+        <div className="header-employe"></div>
+        <div className="container-employe">
+          <ServicesAdmin />
+          <InfoAnimaux />
+          <Avis />
+        </div>
       </div>
       <Footer />
     </>

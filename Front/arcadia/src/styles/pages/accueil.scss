@@ -20,7 +20,16 @@
         } 
     }
 }
-       
+
+.container-rubrique{
+    height: 800px;
+}
+
+.title{
+    color: $terre;
+    font-size: 2em;
+}
+
 .button{
     width: 180px;
     height: 30px;
@@ -47,12 +56,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: auto;
+    height: 250px;
     width: 100%;
-    min-height: 130px;
+    
 }
 
-.container-bloc{
+.container-habitat{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,12 +69,19 @@
     min-height: 500px;
     width: 100%;
     justify-content: space-around;
-}
+    background-color: $herbe;
+    
+   
 
-h2{
-    color: $terre;
-    text-decoration: underline;
 }
+    .flex-habitat{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100vw;
+        
+    }
 
 .herbe{
     background-color: $herbe;
@@ -78,44 +94,45 @@ h2{
 .services{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-around;
-    height: 500px;
+    height: 1200px;
     background-image: url("../../assets/deco/TroisSinges.jpg");
     background-size: cover;
     background-position: center;
 }
 
-.habitats{
-    min-height: 120vh;
-    height: auto;
-    gap: 50px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: 50px;
-}
 
 .carrousel{
-    height: 150px;
-    width: 100%;
-    background-color: white;
+    height: 250px;
+    width: 90%;
+    background-color: $feuille;
+    border: 2px solid $terre;
+    color: $text;
+    font-size: 1.2em;
+    font-weight: bold;
+
+    >slick-slider slick-initialized{
+        height: 10px;
+    }
+
 }
 
 .horaire{
     display: flex;
     flex-direction: column;
     height: 350px;
-    width: 100vw;
+    width: 90%;
     justify-content: center;
     align-items: center;
+    border: 2px solid $terre;
+    margin-bottom: 80px;
 
     >.bloc-horaire{
         height: auto;
         width: 90%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
 
 
         >span{
@@ -127,7 +144,7 @@ h2{
 
 .animaux{
     display: flex;
-    height: 350px;
+    height: 500px;
     width: 100%;
 
     >ul{
@@ -137,12 +154,52 @@ h2{
         height: 100%;
         width: 100%;
         align-items: center;
+       
+       
     
         >li{
             font-weight: bold;
             text-transform: uppercase;
             color: $text;
             text-decoration: dotted;
+            font-size: 1.2em;
         }
+    }
+}
+
+.slick-list{
+    height: 130px;
+    padding: 10px;
+}
+
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 1500px) {
+
+    .title{
+        font-size: 5em;
+    }
+
+    .container-bloc >.header-contenu >span{
+        font-size: 5em;
+    }
+
+    .flex-habitat {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .services{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .animaux>ul>li{
+        font-size: 2em;
+        
+    }
+
+    .horaire>.bloc-horaire>span{
+        font-size: 2.2em;
     }
 }

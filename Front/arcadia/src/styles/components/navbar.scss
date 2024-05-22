@@ -51,7 +51,7 @@
         width: 55px;
         position: fixed;
         top: 5px;
-        left: calc(100vw - 60px);
+        left: calc(100vw - 100px);
         background-color: $feuille;
         display: flex;
         justify-content: center;
@@ -73,7 +73,7 @@
         text-decoration-color: $eau;
         text-underline-offset: 10px; 
         text-decoration-thickness: 2px; 
-        text-decoration-style: wavy;  
+        text-decoration-style:double;  
         
     }
     
@@ -95,7 +95,7 @@
     justify-content: center;
     align-items: center;
     height: 150px;
-    width: 150px;
+    width: 170px;
     margin: 0;
     padding: 0;
     border: 5px solid $feuille;
@@ -109,21 +109,4 @@
     height: 90%;
     width: 90%;
     border-radius: 25px;
-}
-
-    /************************************MEDIA QUERIES******************************************/
-@media screen and (min-width: 640px) {
- 
-    .mobile-menu{
-        width: 100%;
-        border-radius: 0px;
-    }
-
-       a{
-        font-size: 2em;
-       }
-
-    .navbar .logo{
-        box-shadow: none;
-    }
 }

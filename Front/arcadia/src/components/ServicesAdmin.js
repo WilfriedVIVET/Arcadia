@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { isEmpty } from "../Utils/Utils";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   updateService,
   deleteService,
   createService,
 } from "../Utils/ServicesUtils";
+import { getServices } from "../Redux/actions/services.action";
 
 const ServicesAdmin = () => {
+  const dispatch = useDispatch();
   const services = useSelector((state) => state.getServices);
+
+  useEffect(() => {
+    if (isEmpty(services)) {
+      dispatch(getServices());
+    }
+  }, [dispatch, services]);
 
   const [serviceUpdate, setServiceUpdate] = useState({
     index: "",
@@ -41,23 +49,25 @@ const ServicesAdmin = () => {
   };
 
   //Fonction qui modifie un service.
-  const handleUpdate = (service) => {
-    updateService(serviceUpdate);
+  const handleUpdate = async (service) => {
+    await updateService(serviceUpdate);
+    dispatch(getServices());
   };
 
   //Fonction qui supprime un service.
-  const handleDelete = (service) => {
+  const handleDelete = async (service) => {
     setIndex((prevData) => ({
       ...prevData,
       index: service,
     }));
-
-    deleteService(index);
+    await deleteService(index);
+    dispatch(getServices());
   };
 
   //Fonction qui ajoute un service.
-  const handleCreate = () => {
-    createService(serviceUpdate);
+  const handleCreate = async () => {
+    await createService(serviceUpdate);
+    dispatch(getServices());
   };
 
   return (

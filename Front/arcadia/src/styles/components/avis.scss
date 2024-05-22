@@ -1,0 +1,46 @@
+
+.bloc-avis{
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    min-height: 500px;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+
+    >.avis-employe{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 200px;
+        width: 90%;
+        
+
+        >span{
+            text-decoration: underline;
+        }
+
+        >span, p{
+            color: $text;
+            font-weight: bold;
+            margin-top: 10px;
+            
+        }
+
+        >.bloc-info-bouton{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            width: 100%;
+            margin: 20px 0px;
+
+            >span{
+                color: $text;
+                font-weight: bold;
+            }
+        }
+      
+    }
+}

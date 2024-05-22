@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "../Utils/Utils";
 import { postHoraire } from "../Utils/HoraireUtils";
+import { getHoraire } from "../Redux/actions/horaire.action";
 
 const HoraireAdmin = () => {
+  const dispatch = useDispatch();
   const horaires = useSelector((state) => state.getHoraire);
   const [newHoraire, setNewHoraire] = useState([]);
 
@@ -15,9 +17,10 @@ const HoraireAdmin = () => {
     ]);
   };
 
-  const submitHoraire = () => {
-    console.log("newHoraire = ", JSON.stringify(newHoraire));
-    postHoraire(newHoraire);
+  //Envoie au serveur.
+  const submitHoraire = async () => {
+    await postHoraire(newHoraire);
+    dispatch(getHoraire());
   };
 
   return (

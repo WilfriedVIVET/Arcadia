@@ -1,8 +1,19 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import { postNewCompte } from "../Utils/CompteUtils";
+import { postNewCompte, updateUser, deleteUser } from "../Utils/CompteUtils";
+import { useDispatch, useSelector } from "react-redux";
+import { isEmpty } from "../Utils/Utils";
+import { getUtilisateur } from "../Redux/actions/utilisateur.action";
 
 const CreationCompte = () => {
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.getUtilisateur);
+  const [showbouton, setShowBouton] = useState(false);
+  const [selectedUser, setSelectedUser] = useState({
+    username: "",
+    nom: "",
+    prenom: "",
+  });
+
   const [account, setAccount] = useState({
     role: "2",
     email: "",
@@ -26,11 +37,12 @@ const CreationCompte = () => {
     }
   };
 
+  //Fonction qui remet les champs du formulaire à zéro.
   const resetForm = (e) => {
     const form = e.target;
     form.reset();
     setAccount({
-      role: "2",
+      role_id: "2",
       email: "",
       prenom: "",
       nom: "",
@@ -38,6 +50,38 @@ const CreationCompte = () => {
     });
   };
 
+  // Gestion du clic sur une ligne du tableau
+  const handleTableClick = (user) => {
+    setSelectedUser((prevData) => ({
+      ...prevData,
+      username: user.username,
+      nom: user.nom,
+      prenom: user.prenom,
+    }));
+    setShowBouton(!showbouton);
+  };
+
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setSelectedUser((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  //Modification d'un compte
+  const handleModif = async () => {
+    await updateUser(selectedUser);
+    dispatch(getUtilisateur());
+  };
+
+  //Suppression d'un compte.
+  const handleDelete = async () => {
+    await deleteUser(selectedUser);
+    dispatch(getUtilisateur());
+  };
+
+  //Envoie du nouveau compte au serveur.
   const submitAccount = (e) => {
     e.preventDefault();
     postNewCompte(account);
@@ -45,13 +89,66 @@ const CreationCompte = () => {
   };
 
   return (
-    <div className="body-container">
-      <Navbar />
+    <>
       <div className="container-formulaire">
         <div className="header-formulaire">
+          <span>COMPTE</span>
+        </div>
+        <div className="container-tableau">
+          <table className="user-table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Rôle</th>
+              </tr>
+            </thead>
+            <tbody>
+              {!isEmpty(users) &&
+                users.map((user, index) => (
+                  <tr key={index} onClick={() => handleTableClick(user)}>
+                    <td>{user.nom}</td>
+                    <td>{user.prenom}</td>
+                    <td>{user.label}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+
+          <div
+            className="modif-utilisateur"
+            style={{ display: showbouton ? "flex" : "none" }}
+          >
+            <input
+              type="text"
+              className="input-formulaire"
+              name="nom"
+              defaultValue={selectedUser ? selectedUser.nom : ""}
+              onChange={handleInput}
+            />
+            <input
+              type="text"
+              className="input-formulaire"
+              name="prenom"
+              defaultValue={selectedUser ? selectedUser.prenom : ""}
+              onChange={handleInput}
+            />
+
+            <div className="bloc-petit-bouton">
+              <button className="button-formulaire" onClick={handleModif}>
+                Modifier
+              </button>
+              <button className="button-formulaire" onClick={handleDelete}>
+                Supprimer
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="trait"></div>
+        <div className="header-contenu">
           <span>CREER UN COMPTE</span>
         </div>
-        <form onSubmit={submitAccount} className="formulaire">
+        <form onSubmit={submitAccount} className="formulaire-compte">
           <div className="formulaire-radio">
             <label htmlFor="2" className="label-radio-formulaire">
               Employé
@@ -60,9 +157,9 @@ const CreationCompte = () => {
               type="radio"
               id="2"
               name="compte"
-              className="input-formulaire"
               onClick={handleUserChange}
               defaultChecked
+              className="input-radio"
             />
             <label htmlFor="3" className="label-radio-formulaire">
               Vétérinaire
@@ -71,8 +168,8 @@ const CreationCompte = () => {
               type="radio"
               id="3"
               name="compte"
-              className="input-formulaire"
               onClick={handleUserChange}
+              className="input-radio"
             />
           </div>
           <div className="formulaire-bloc">
@@ -132,7 +229,7 @@ const CreationCompte = () => {
           </button>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 

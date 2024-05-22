@@ -1,0 +1,113 @@
+.container-tableau-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-height: 200px;
+    height: auto;
+    width: 90%;
+    max-width:600px ;
+    background-color: $feuille;
+    box-shadow: $boxShadow;
+    border-radius: 25px;
+    margin-top: 20px;
+
+    .tableau {
+        display: flex;
+        table-layout: fixed; 
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+        margin-top: 20px;
+        background-color: $herbe;
+        overflow-x: auto;
+        
+        th, td {
+            color: $text;
+            font-size: 1em;
+            min-width: 120px; /* Minimum width for better readability */
+            text-align: center;
+            padding: 8px; /* Padding for better spacing */
+            box-sizing: border-box; /* Ensure padding and border are included in width/height */
+        }
+        
+        thead {
+            display: table-header-group; /* Ensures thead is treated as a table header */
+        }
+        
+        tbody {
+            display: table-row-group; /* Ensures tbody is treated as a table body */
+        }
+        
+        tr {
+            display: table-row; /* Ensures tr is treated as a table row */
+        }
+        }
+        
+        > tbody {
+            width: max-content; 
+            display: flex;
+            flex-direction: column;
+            
+            > tr {
+                display: flex;
+                width: max-content;
+                border: 1px solid $feuille;
+                
+                > td {
+                    font-size: 0.8em;
+                    min-width: 120px; 
+                    width: 100%;
+                    align-items: center;
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    border: 1px solid $feuille;
+                    
+                    > input {
+                        height: 100%;
+                        width: 100%;
+                        background-color: $herbe;
+                        border: none;
+                        color: $text;
+                        font-size: 1.2em;
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+
+table > thead > tr > th:hover {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px) {
+    .tableau {
+        overflow-x: auto;
+        
+        > thead > tr {
+            display: block;
+        }
+        
+        > tbody > tr {
+            display: block;
+            white-space: nowrap; 
+        }
+        
+        > thead > tr > th:nth-child(n+4), 
+        > tbody > tr > td:nth-child(n+4) {
+            display: none; 
+        }
+    }
+}
+
+/***************************************MEDIQUERIES**********************************************/
+
+@media screen and (min-width: 600px) {
+    .tableau > thead > tr > th,
+    .tableau > tbody > tr > td {
+        display: table-cell;
+    }
+}

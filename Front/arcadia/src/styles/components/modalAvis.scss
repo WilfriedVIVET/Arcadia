@@ -1,14 +1,48 @@
 
-.avis{   
-    position: absolute;
-    z-index: 10;
-    
-}
+.container-modal{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  height: 600px;
+  width: 90%;
+  max-width:600px ;
+  background-color: $feuille;
+  box-shadow: $boxShadow;
+  border-radius: 25px;
+  position: absolute;
 
+>.formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    height: 100%;
+   
+    >label{
+        width: 100%;
+        color: $text;
+        font-weight: bold;
+        font-size: 1.5em;
+        padding-left: 30px;
+    }
+       
+    >.input-formulaire{
+        width: 90%;
+    }
+
+    >.textArea-formulaire{
+        height: 150px;
+        width: 90%;
+    }   
+}
+            
+}
 .croix{
     display: flex;
     color: $feuille;
     height: 100%;
+    width: 40px;
     align-items: center;
     font-size: 1.8em;
     border-radius: 5px;
@@ -16,4 +50,4 @@
     
 }
        
-     
+ 

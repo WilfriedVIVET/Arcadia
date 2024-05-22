@@ -53,6 +53,7 @@ const Connexion = () => {
 
   const submitConnexion = (e) => {
     e.preventDefault();
+    console.log("role = " + roleUser);
     getRole(account).then((role) => {
       // Vérification des bons identifiants.
       if (!role) {
@@ -105,10 +106,10 @@ const Connexion = () => {
             <button className="button-formulaire" type="submit">
               Connexion
             </button>
-            <span className={showAlert ? "alert show" : "alert "}>
-              Identifiants incorrects. Veuillez réessayer.
-            </span>
           </form>
+          <span className={showAlert ? "alert show" : "alert "}>
+            Identifiants incorrects. Veuillez réessayer.
+          </span>
         </div>
       </div>
       <Footer />

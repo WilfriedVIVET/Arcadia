@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { postContact } from "../Utils/ContactUtils";
 
 const Contact = () => {
+  const [contact, setContact] = useState({
+    titre: "",
+    description: "",
+    email: "",
+  });
+
+  const handleContact = (e) => {
+    const { name, value } = e.target;
+    setContact((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const submitContact = (e) => {
+    e.preventDefault();
+    const { email, titre, description } = contact;
+    // Validation de l'email avec une expression régulière
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      alert("Veuillez saisir une adresse e-mail valide.");
+      return;
+    }
+
+    // Échappement des données
+    const encodedContact = {
+      ...contact,
+      titre: encodeURIComponent(titre),
+      description: encodeURIComponent(description),
+    };
+
+    postContact(encodedContact);
+  };
+
   return (
     <>
       <div className="body-container">
@@ -11,7 +46,7 @@ const Contact = () => {
           <div className="header-formulaire">
             <span>CONTACTEZ-NOUS:</span>
           </div>
-          <form action="" className="formulaire">
+          <form onSubmit={submitContact} className="formulaire-contact">
             <div className="formulaire-bloc">
               <label htmlFor="titre" className="label-formulaire">
                 Titre:
@@ -21,20 +56,10 @@ const Contact = () => {
                 name="titre"
                 className="input-formulaire"
                 id="titre"
+                onChange={handleContact}
               />
             </div>
-            <div className="formulaire-bloc">
-              <label htmlFor="mail" className="label-formulaire">
-                Email:
-              </label>
-              <input
-                type="text"
-                name="mail"
-                className="input-formulaire"
-                id="mail"
-              />
-            </div>
-            <div className="formulaire-bloc">
+            <div className="formulaire-area">
               <label htmlFor="description" className="label-formulaire">
                 Description:
               </label>
@@ -44,9 +69,25 @@ const Contact = () => {
                 rows={4}
                 cols={35}
                 id="description"
+                maxLength="250"
+                onChange={handleContact}
               />
             </div>
-            <button className="button-formulaire">Envoyer</button>
+            <div className="formulaire-bloc">
+              <label htmlFor="email" className="label-formulaire">
+                Email:
+              </label>
+              <input
+                type="text"
+                name="email"
+                className="input-formulaire"
+                id="email"
+                onChange={handleContact}
+              />
+            </div>
+            <button className="button-formulaire" type="submit">
+              Envoyer
+            </button>
           </form>
         </div>
       </div>
