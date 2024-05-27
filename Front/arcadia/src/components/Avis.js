@@ -49,7 +49,7 @@ const Avis = () => {
       <div className="header-formulaire">
         <span>Avis</span>
       </div>
-      <form onSubmit={handleSubmit} className="bloc-avis">
+      <form onSubmit={handleSubmit} className="formulaire">
         {!isEmpty(avis) &&
           avis.map((avisUser) => (
             <div className="avis-employe" key={avisUser.avis_id}>

@@ -14,13 +14,25 @@ const Navbar = () => {
 
   return (
     <>
-      <NavLink to="/" className="logo">
-        <img src="logo.png" alt="logo arcadia" />
-      </NavLink>
-
       <nav className="navbar">
+        <div className="title-logo">
+          <NavLink to="/">
+            <span className="span-logo">ARCADIA</span>
+          </NavLink>
+        </div>
+
         <div className={`nav-link ${isActive ? "" : "mobile-menu"}`}>
           <ul className="ulnav">
+            <li className="li-navbar li-logo">
+              <NavLink
+                to="/"
+                className={(nav) => (nav.isActive ? "nav-active" : "")}
+              >
+                <div className="logo">
+                  <img src="logo.png" alt="logo arcadia" />
+                </div>
+              </NavLink>
+            </li>
             <li className="li-navbar">
               <NavLink
                 to="/"

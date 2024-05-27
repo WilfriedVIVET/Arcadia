@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 import { isEmpty } from "../Utils/Utils";
 import store from "../Redux/store/store";
 import { getAvis } from "../Redux/actions/avis.action";
-import backgroundImage from "../assets/deco/employe.png";
 
 const Employe = () => {
   const dispatch = useDispatch;
@@ -19,9 +18,7 @@ const Employe = () => {
     <>
       <div className="body-employe">
         <Navbar />
-        <div className="container-services">
-          <img className="background-image" src={backgroundImage} alt="Pont" />
-        </div>
+        <div className="header-veterinaire"></div>
         <div className="header-employe"></div>
         <div className="container-employe">
           <ServicesAdmin />

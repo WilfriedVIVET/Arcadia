@@ -94,8 +94,8 @@ const CreationCompte = () => {
         <div className="header-formulaire">
           <span>COMPTE</span>
         </div>
-        <div className="container-tableau">
-          <table className="user-table">
+        <div className="formulaire">
+          <table className="tableau-admin">
             <thead>
               <tr>
                 <th>Nom</th>
@@ -144,11 +144,13 @@ const CreationCompte = () => {
             </div>
           </div>
         </div>
-        <div className="trait"></div>
-        <div className="header-contenu">
+      </div>
+
+      <div className="container-formulaire">
+        <div className="header-formulaire">
           <span>CREER UN COMPTE</span>
         </div>
-        <form onSubmit={submitAccount} className="formulaire-compte">
+        <form onSubmit={submitAccount} className="formulaire">
           <div className="formulaire-radio">
             <label htmlFor="2" className="label-radio-formulaire">
               Employé

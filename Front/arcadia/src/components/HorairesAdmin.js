@@ -28,42 +28,44 @@ const HoraireAdmin = () => {
       <div className="header-formulaire">
         <span>HORAIRES:</span>
       </div>
-      <table className="tableau">
-        <thead>
-          <tr>
-            <th>Jour</th>
-            <th>Matin</th>
-            <th>Soir</th>
-          </tr>
-        </thead>
-        <tbody>
-          {!isEmpty(horaires) &&
-            horaires.map((horaire, index) => (
-              <tr key={index}>
-                <td className="jour-horaire">{horaire.jour}</td>
-                <td>
-                  <input
-                    type="text"
-                    defaultValue={horaire.debut}
-                    onBlur={(e) => handleHoraire(index, e)}
-                    name="debut"
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    defaultValue={horaire.fin}
-                    onBlur={(e) => handleHoraire(index, e)}
-                    name="fin"
-                  />
-                </td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
-      <button className="button-formulaire" onClick={submitHoraire}>
-        Valider
-      </button>
+      <div className="formulaire">
+        <table className="tableau-admin">
+          <thead>
+            <tr>
+              <th>Jour</th>
+              <th>Matin</th>
+              <th>Soir</th>
+            </tr>
+          </thead>
+          <tbody>
+            {!isEmpty(horaires) &&
+              horaires.map((horaire, index) => (
+                <tr key={index}>
+                  <td>{horaire.jour}</td>
+                  <td>
+                    <input
+                      type="text"
+                      defaultValue={horaire.debut}
+                      onBlur={(e) => handleHoraire(index, e)}
+                      name="debut"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      defaultValue={horaire.fin}
+                      onBlur={(e) => handleHoraire(index, e)}
+                      name="fin"
+                    />
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+        <button className="button-formulaire" onClick={submitHoraire}>
+          Valider
+        </button>
+      </div>
     </div>
   );
 };

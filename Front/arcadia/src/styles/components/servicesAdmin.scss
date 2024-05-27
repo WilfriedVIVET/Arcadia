@@ -15,9 +15,8 @@
     width: 95%;
     padding: 10px;
     color: $text;
-    border-bottom: 2px solid $terre;
-    
-    
+   
+
     >.input-nomService{
       font-weight: bold;
       text-transform: uppercase;
@@ -44,53 +43,6 @@
     }
   }
 }
-
-.form-service{
-  height: auto;
-  min-height: 250px;
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  background-color: $feuille;
-  align-items: center;
-  margin-bottom: 20px;
-  border-radius: 25px;
-  justify-content: space-around;
-  margin-top: 20px;
-  
-
-  >label{
-    color: $text;
-  }
-
-  >input, textarea{
-    color: $feuille;
-    width: 95%;
-    height: 50px;
-    font-size: 1em;
-    font-weight: bold;
-    background-color: $herbe;
-    border-radius: 25px;
-  }
-  
-  >textarea{
-    height:80px;
-    resize: none;
-  }
-}
-
-.title-span{
-  height: 50px;
-  width: 100%;
-  background-color: $terre;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $feuille;
-  font-weight: bold;
-}
-
-
 
 .service-admin:hover{
   cursor: pointer;

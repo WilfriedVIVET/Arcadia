@@ -71,60 +71,78 @@ const ServicesAdmin = () => {
   };
 
   return (
-    <div className="container-formulaire">
-      <div className="header-formulaire">
-        <span>SERVICES</span>
-      </div>
-      <div className="services-admin">
-        {!isEmpty(services) &&
-          services.map((service, index) => (
-            <div
-              className="service-admin"
-              key={index}
-              onClick={() => handleService(service.service_id)}
-            >
-              <input
-                className="input-nomService"
-                defaultValue={service.nom}
-                onChange={handleNomChange}
-              ></input>
-              <textarea
-                className="textArea-descriptionService"
-                defaultValue={service.description}
-                onChange={handleDescriptionChange}
-              ></textarea>
-              <div className="bloc-petit-bouton">
-                <button
-                  className="petit-bouton"
-                  onClick={() => handleUpdate(service.service_id)}
-                >
-                  MODIFIER
-                </button>
-                <button
-                  className="petit-bouton"
-                  onClick={() => handleDelete(service.service_id)}
-                >
-                  SUPPRIMER
-                </button>
+    <>
+      <div className="container-formulaire">
+        <div className="header-formulaire">
+          <span>SERVICES</span>
+        </div>
+        <div className="services-admin">
+          {!isEmpty(services) &&
+            services.map((service, index) => (
+              <div
+                className="service-admin"
+                key={index}
+                onClick={() => handleService(service.service_id)}
+              >
+                <input
+                  className="input-nomService"
+                  defaultValue={service.nom}
+                  onChange={handleNomChange}
+                ></input>
+                <textarea
+                  className="textArea-descriptionService"
+                  defaultValue={service.description}
+                  onChange={handleDescriptionChange}
+                ></textarea>
+                <div className="bloc-petit-bouton">
+                  <button
+                    className="petit-bouton"
+                    onClick={() => handleUpdate(service.service_id)}
+                  >
+                    MODIFIER
+                  </button>
+                  <button
+                    className="petit-bouton"
+                    onClick={() => handleDelete(service.service_id)}
+                  >
+                    SUPPRIMER
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+        </div>
       </div>
 
-      <div className="form-service">
-        <label htmlFor="nom">NOM:</label>
-        <input type="text" name="nom" id="nom" onChange={handleNomChange} />
-        <label htmlFor="description">DESCRIPTION:</label>
-        <textarea
-          name="description"
-          id="description"
-          onChange={handleDescriptionChange}
-        ></textarea>
-        <button className="button-formulaire" onClick={handleCreate}>
-          AJOUTER UN SERVICE
-        </button>
+      <div className="container-formulaire">
+        <div className="header-formulaire">
+          <span>CREER UN SERVICE</span>
+        </div>
+        <form className="formulaire">
+          <label htmlFor="nom" className="label-formulaire">
+            NOM:
+          </label>
+          <input
+            type="text"
+            name="nom"
+            className="input-formulaire"
+            id="nom"
+            onChange={handleNomChange}
+          />
+          <label htmlFor="description" className="label-formulaire">
+            DESCRIPTION:
+          </label>
+          <textarea
+            name="description"
+            id="description"
+            onChange={handleDescriptionChange}
+            className="textArea-formulaire"
+          ></textarea>
+          <button className="button-formulaire" onClick={handleCreate}>
+            AJOUTER UN SERVICE
+          </button>
+        </form>
       </div>
-    </div>
+    </>
   );
 };
 

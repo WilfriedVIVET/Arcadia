@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "../Utils/Utils";
+import axios from "axios";
 import store from "../Redux/store/store";
 import { getInfoAnimal } from "../Redux/actions/infoAnimal.action";
 
@@ -34,6 +35,19 @@ const VignetteHabitatComplet = ({ habitat }) => {
       setAnimals(animaux.filter((animal) => animal.nom === habitat.nom));
     }
   }, [animaux, habitat.nom, isLoading]);
+
+  //Fonction qui ajoute "1" au nombre de consultation de l'animal.
+  const udpateConsultation = async (prenom) => {
+    try {
+      await axios.post("http://localhost:3008/animals", { prenom });
+    } catch (error) {
+      console.log("problème bdd mongo vignette");
+    }
+  };
+
+  useMemo(() => {
+    udpateConsultation(selectedAnimal.prenom);
+  }, [selectedAnimal]);
 
   //Remplissage info animal dans vignette.
   const handleInfo = (animal) => {

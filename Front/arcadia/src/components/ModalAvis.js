@@ -37,7 +37,9 @@ const ModalAvis = ({ handleShowModale }) => {
         </div>
       </div>
       <form onSubmit={submitAvis} className="formulaire">
-        <label htmlFor="pseudo">Pseudo:</label>
+        <label htmlFor="pseudo" className="label-formulaire">
+          Pseudo:
+        </label>
         <input
           type="text"
           name="pseudo"
@@ -46,7 +48,9 @@ const ModalAvis = ({ handleShowModale }) => {
           onChange={handleAvis}
         />
 
-        <label htmlFor="avis">Avis:</label>
+        <label htmlFor="avis" className="label-formulaire">
+          Avis:
+        </label>
         <textarea
           maxLength="150"
           name="commentaire"

@@ -3,26 +3,34 @@
     height: auto;
     width: 100vw;
 
-    >.header{
+    >.header-accueil{
         height: 500px;
+        width: 100%;
         background-image: url("../../assets/deco/fond-header.jpg");
         background-position: center;
-        background-size: cover;
+        background-attachment: fixed;
+        background-size:cover;
         background-repeat: no-repeat;
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
         >span{
-            position: absolute;
-            top: 50%;
-            left: 20%;
             font-size: 2.5em;
             color: $text;
             text-shadow: $textShadow;
+            width: auto;
+            margin-left: 20px;
         } 
     }
 }
 
 .container-rubrique{
     height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   
 }
 
 .title{
@@ -30,25 +38,18 @@
     font-size: 2em;
 }
 
-.button{
-    width: 180px;
-    height: 30px;
-    margin-left: 40%;
-}
-    
+
 .description{
     color: $text;
-    height: 200px;
+    height: auto;
     width: 90%;
     margin: auto;
     font-size: 1.4em;
 }
 
-.trait{
-    height: 8px;
-    width: 70%;
-    border-radius: 25px;
-    background-color: $terre;
+.span-logo{
+    color: $terre;
+    text-shadow: 0px 2px 2px rgb(255, 237, 34);
 }
 
 .header-contenu{
@@ -118,28 +119,15 @@
 
 }
 
-.horaire{
-    display: flex;
-    flex-direction: column;
-    height: 350px;
-    width: 90%;
-    justify-content: center;
-    align-items: center;
+.button-accueil-avis{
+    height: 50px;
+    width: 200px;
+    background-color: $feuille;
+    color: $text;
     border: 2px solid $terre;
-    margin-bottom: 80px;
-
-    >.bloc-horaire{
-        height: auto;
-        width: 90%;
-        display: flex;
-        justify-content: space-around;
-
-
-        >span{
-            font-size: 1.2em;
-            color: $text;
-        }
-    }
+    border-radius: 25px;
+    box-shadow: $boxShadowButton;
+    font-size: 1.2em;
 }
 
 .animaux{
@@ -151,12 +139,10 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        height: 100%;
+        height: 90%;
         width: 100%;
         align-items: center;
-       
-       
-    
+        
         >li{
             font-weight: bold;
             text-transform: uppercase;
@@ -167,10 +153,41 @@
     }
 }
 
+.carrousel{
+    border-radius: 25px;
+    width: 100%;
+}
+
 .slick-list{
     height: 130px;
     padding: 10px;
 }
+
+.horaire{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $terre;
+    margin-bottom: 80px;
+    border-radius: 25px;
+
+    >.bloc-horaire{
+        height: auto;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+
+
+        >span{
+            font-size: 1.2em;
+            color: $text;
+        }
+    }
+}
+
 
 /************************************MEDIA QUERIES******************************************/
 @media screen and (min-width: 1500px) {

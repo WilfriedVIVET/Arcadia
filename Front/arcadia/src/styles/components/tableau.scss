@@ -1,0 +1,68 @@
+
+.tableau-admin{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-width: 90%;
+    margin-top: 20px;
+    background-color: $herbe;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    color: $text;
+}
+
+thead{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: auto;
+}
+  
+th{
+    display: flex;
+    height: 50px;
+    width: 190px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $feuille;
+    border-collapse: collapse;
+    text-decoration: underline;
+}
+
+
+tbody{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+tr{
+    display: flex;
+    width: auto;
+   
+}    
+
+td{
+    align-items: center;
+    height: 50px;
+    min-width: 190px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid $feuille;
+
+    >input{
+        text-align: center;
+        background-color: $herbe;
+        border: none;
+        color: $text;
+        font-size: 1.2em;
+        width: 50%;
+        
+    }
+}    
+
+th:hover{
+    cursor: pointer;
+}
+
+   

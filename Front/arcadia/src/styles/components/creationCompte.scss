@@ -6,84 +6,24 @@
     width: 90%;
     margin: 20px;
     
-    >.user-table {
-        width: 100%;
-        border-collapse: collapse;
-        border-radius: 25px;
-        margin: 0 auto;
-        height: auto;
-        min-height: 200px;
-    
-        >th,td{
-        
-            border: 1px solid $feuille;
-        }
-    
-    }
-    
-    >.user-table th,
-    .user-table td {
-        color: $text;
-        padding: 8px;
-        text-align: center;
-    }
-
-    >.modif-utilisateur{
-        padding:20px 0px;
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        height: auto;
-        min-height: 80px;
-        width: 100%;
-       
-        align-items: center;
-        
-
-        >input{
-            width: 70%;
-            padding-left: 15px;
-            color: $text;
-        }
-    }
-
+ 
 }
 
-    .header-contenu{
-        height: 80px;
-        >span{
-            color:$text;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-    }
-
-    .formulaire-compte{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
+.formulaire{
+  
     .formulaire-radio{
         display: flex;
         align-items: center;
         justify-content: space-around;
         height: 50px;
         width: 100%;
-  }      
-   
-
-    .label-radio-formulaire{
         color: $text;
-        font-size: 1.2em;
-    }
+    }      
     
-    .input-radio{
-       
+    .input-radio{   
         height: 20px;
         width: 20px;
     }
-  
+    
+}
  

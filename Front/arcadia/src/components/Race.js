@@ -89,8 +89,8 @@ const Race = () => {
       <div className="header-formulaire">
         <span>Race</span>
       </div>
-      <form className="from-race">
-        <span>Choisissez une race:</span>
+      <div className="formulaire">
+        <label className="label-formulaire">Choisissez une race:</label>
         <Select
           styles={customStyles}
           options={optionsRace}
@@ -98,16 +98,20 @@ const Race = () => {
           onChange={(selectedOption) => setSelectedRace(selectedOption)}
         />
 
-        <span>Ajouter une race:</span>
-        <input type="text" className="input-race" onChange={handleNewRace} />
+        <label className="label-formulaire">Ajouter une race:</label>
+        <input
+          type="text"
+          className="input-formulaire"
+          onChange={handleNewRace}
+        />
 
-        <button className="button-race" onClick={submitRace}>
+        <button className="button-formulaire" onClick={submitRace}>
           Valider
         </button>
-        <button className="button-race" onClick={submitDeleteRace}>
+        <button className="button-formulaire" onClick={submitDeleteRace}>
           Supprimer
         </button>
-      </form>
+      </div>
     </div>
   );
 };

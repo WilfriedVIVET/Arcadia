@@ -45,17 +45,18 @@ const Veto = () => {
         <div className="header-formulaire">
           <span>Etat des habitats</span>
         </div>
-        <div className="body-veto">
+        <div className="formulaire">
           {!isEmpty(habitats) &&
             habitats.map((habitat, index) => (
               <div className="bloc-habitat" key={index}>
                 <div className="bloc-info">
-                  <span>{habitat.nom + ":"}</span>
+                  <span className="label-formulaire">{habitat.nom + ":"}</span>
                   <input
                     type="text"
                     name={habitat.nom}
                     defaultValue={habitat.commentaire}
                     onChange={handleHabitat}
+                    className="input-formulaire"
                   />
                 </div>
                 <div className="bloc-button">

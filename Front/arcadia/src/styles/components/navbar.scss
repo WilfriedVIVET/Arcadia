@@ -12,38 +12,54 @@
     align-items: center;
     box-shadow: $boxShadow;
     z-index: 2;
+   
+    >.title-logo{
+        margin-left: 30px;
+        height: 100%;
+        width: 220px;
+        display: flex;
+        align-items: center;
+        font-size: 2.2em;
+        font-weight: bold;
+    }
     
    >.nav-link{
        position: fixed;
        top: 0px;
        left: 0;
-       height: calc(100vh - 60px); 
-       width: 180px;
+       height: 100%; 
+       width: 100%;
        display: flex;
        flex-direction: column;
-       background-color: $feuille;
+       background-color:$feuille;
        margin-left: -100%;
        transition: all 0.5s ease;
+       border-bottom-right-radius: 50px;
     }
     
     >.mobile-menu {
         margin-left: 0;
         border-bottom-right-radius: 50px;
-        background-color: $feuille;
         box-shadow: $boxShadow;
+        background-color: $trait; 
     }
-    
     >.nav-link ul{
-        padding-top: 170px;
+        padding-top: 80px;
         display: flex;
         flex-direction: column;
         gap: 20px;
         text-align: center;
         height: 80%;   
+       
     }    
     
     >.nav-link ul li{
-        margin: 15px 15px;  
+        margin: auto;  
+        font-size: 1.5em;
+        font-weight: bold;
+        height: auto;
+        
+
     }   
     
     .div-burger{
@@ -51,7 +67,7 @@
         width: 55px;
         position: fixed;
         top: 5px;
-        left: calc(100vw - 100px);
+        left: calc(100vw - 80px);
         background-color: $feuille;
         display: flex;
         justify-content: center;
@@ -59,22 +75,21 @@
         
         >img{
             margin: auto;  
-            height: 30px;
-            width: 30px;               
+            height: 45px;
+            width: 45px;               
         }
     }
     
     a{
-        color: $terre;
+      color: $feuille;
     }
     
     .nav-active{
         text-decoration: underline;
-        text-decoration-color: $eau;
+        text-decoration-color: $feuille;
         text-underline-offset: 10px; 
-        text-decoration-thickness: 2px; 
-        text-decoration-style:double;  
-        
+        text-decoration-thickness:5px; 
+        text-decoration-style:solid;    
     }
     
     .burger:hover{
@@ -82,31 +97,33 @@
         transform: scale(1.2);
     }
     
-    .navbar .nav-link ul li:hover{
+   .li-navbar:hover{
         transform: scale(1.1);
+       
     }
 }
 
  .logo {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 150px;
-    width: 170px;
+    width: 250px;
     margin: 0;
     padding: 0;
-    border: 5px solid $feuille;
-    border-bottom-right-radius: 30px;
-    background-color: $feuille;
-    box-shadow: -8px 8px 5px 0px rgba(0,0,0,0.75);
-    z-index: 3;
+    border-radius: 25px;
+    box-shadow: $boxShadow;
+    background-color: #914c02;
 }
 
-.logo img {
-    height: 90%;
+
+
+.logo > img {
+    //margin-bottom: 5px;
+    height: 85%;
     width: 90%;
     border-radius: 25px;
+    border: 4px solid #ec7c03;
+    border-top: 6px solid #e3770386 ;
+  
 }

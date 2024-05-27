@@ -1,21 +1,16 @@
 
-.bloc-avis{
-    display: flex;
-    flex-direction: column;
-    height:auto;
-    min-height: 500px;
-    gap: 20px;
-    align-items: center;
-    margin-top: 20px;
-    width: 100%;
-
+.formulaire{
+    
     >.avis-employe{
         display: flex;
         flex-direction: column;
         height: auto;
         min-height: 200px;
-        width: 90%;
+        width: 100%;
         
+        >.trait{
+            width: 90%;
+        }
 
         >span{
             text-decoration: underline;
@@ -24,8 +19,7 @@
         >span, p{
             color: $text;
             font-weight: bold;
-            margin-top: 10px;
-            
+            margin-top: 10px;   
         }
 
         >.bloc-info-bouton{
@@ -40,7 +34,10 @@
                 color: $text;
                 font-weight: bold;
             }
+            >.button-formulaire{
+                width: 100px;
+                font-size: 0.8em;
+            }
         }
-      
     }
 }

@@ -8,25 +8,27 @@
     align-items: center;
     padding-top: 30px;
   
-    > .container-services {
-      overflow: hidden; 
     
-  
-      > .background-image {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-  
-      > span {
-        position: absolute;
-        top: 30%;
-        left: 20%;
-        color: $terre;
-        font-size: 1.8em;
-        text-decoration: underline;
-      }
-    }
+    >.header-service{
+      height: 500px;
+      width: 100%;
+      background-image: url("../../assets/deco/service.jpg");
+      background-position: center;
+      background-attachment: fixed;
+      background-size:cover;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+      >span{
+          font-size: 2.5em;
+          color: $text;
+          text-shadow: $textShadow;
+          width: auto;
+          margin-left: 20px;
+      } 
+  }
   
     > .service-service {
       display: flex;

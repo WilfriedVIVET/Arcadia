@@ -89,7 +89,7 @@ const HabitatsAdmin = () => {
       <div className="header-formulaire">
         <span>HABITATS:</span>
       </div>
-      <form onSubmit={handleSubmit} className="container-habitat-admin">
+      <form onSubmit={handleSubmit} className="formulaire">
         <div className="container-radio">
           {!isEmpty(habitats) &&
             habitats.map((habitat, index) => (
@@ -107,34 +107,38 @@ const HabitatsAdmin = () => {
               </div>
             ))}
         </div>
-        <div className="bloc-nom">
-          <label htmlFor="nom">Nom:</label>
-          <input
-            className="input-formulaire"
-            type="text"
-            name="nom"
-            onChange={handleInfo}
-            defaultValue={
-              indexHabitat !== "" && habitats[indexHabitat]
-                ? habitats[indexHabitat].nom
-                : ""
-            }
-          />
-        </div>
-        <div className="bloc-description">
-          <label htmlFor="descriptionHabitat">Description:</label>
-          <textarea
-            name="descriptionHabitat"
-            id="descriptionHabitat"
-            maxLength="250"
-            onChange={handleInfo}
-            defaultValue={
-              indexHabitat !== "" && habitats[indexHabitat]
-                ? habitats[indexHabitat].description
-                : ""
-            }
-          ></textarea>
-        </div>
+
+        <label htmlFor="nom" className="label-formulaire">
+          Nom:
+        </label>
+        <input
+          className="input-formulaire"
+          type="text"
+          name="nom"
+          onChange={handleInfo}
+          defaultValue={
+            indexHabitat !== "" && habitats[indexHabitat]
+              ? habitats[indexHabitat].nom
+              : ""
+          }
+        />
+
+        <label htmlFor="descriptionHabitat" className="label-formulaire">
+          Description:
+        </label>
+        <textarea
+          name="descriptionHabitat"
+          id="descriptionHabitat"
+          className="textArea-formulaire"
+          maxLength="250"
+          onChange={handleInfo}
+          defaultValue={
+            indexHabitat !== "" && habitats[indexHabitat]
+              ? habitats[indexHabitat].description
+              : ""
+          }
+        ></textarea>
+
         <div className="glisser">
           <span>Photo:</span>
           <div className="photo">
@@ -167,10 +171,10 @@ const HabitatsAdmin = () => {
         <button className="button-formulaire" type="submit">
           VALIDER
         </button>
+        <button className="button-formulaire" onClick={handleDeleteHabitat}>
+          SUPPRIMER
+        </button>
       </form>
-      <button className="button-formulaire" onClick={handleDeleteHabitat}>
-        SUPPRIMER
-      </button>
     </div>
   );
 };

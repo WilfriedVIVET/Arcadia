@@ -5,22 +5,24 @@
     background-color: $herbe;
     
 
-    >.container-services {
-        overflow: hidden; 
+    >.header-veterinaire{
+        height: 500px;
+        width: 100%;
+        background-image: url("../../assets/deco/employe.png");
+        background-position: center;
+        background-attachment: fixed;
+        background-size:cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       
-        > .background-image {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-    }   
-
+    }  
     
     >.container-employe{
         display: flex;
         flex-direction: column;
         margin-top: 20px;
-        padding-bottom: 20px;
         min-height: 200px;
         height: auto;
         width: 100%;

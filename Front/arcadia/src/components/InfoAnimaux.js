@@ -134,7 +134,7 @@ const InfoAnimaux = () => {
       <div className="header-formulaire">
         <span>Animaux</span>
       </div>
-      <div className="body-veto">
+      <div className="formulaire">
         <div className="bloc-info">
           <span className="date">{currentDateTime.toLocaleString()}</span>
         </div>
@@ -147,118 +147,113 @@ const InfoAnimaux = () => {
             onChange={(selectedOption) => setSelectedAnimal(selectedOption)}
           />
         </div>
-        <div className="bloc-animal-info">
-          <form onSubmit={submitRapport}>
-            {roleUser !== "employe" && (
-              <div className="bloc-info">
-                <span>Visité le:</span>
-                <span className="span-formulaire">
-                  {!isEmpty(selectedAnimal) &&
-                    animals[selectedAnimal.indexAnimal].date_rapport}
-                </span>
-              </div>
+
+        <form onSubmit={submitRapport} className="formulaire">
+          {roleUser !== "employe" && (
+            <div className="bloc-info">
+              <span>Visité le:</span>
+              <span className="span-formulaire">
+                {!isEmpty(selectedAnimal) &&
+                  animals[selectedAnimal.indexAnimal].date_rapport}
+              </span>
+            </div>
+          )}
+          <div className="bloc-info">
+            <span>Prénom:</span>
+            <span className="span-formulaire">
+              {!isEmpty(selectedAnimal) &&
+                animals[selectedAnimal.indexAnimal].prenom}
+            </span>
+          </div>
+          <div className="bloc-info">
+            <span>Race:</span>
+            <span className="span-formulaire">
+              {!isEmpty(selectedAnimal) &&
+                animals[selectedAnimal.indexAnimal].label}
+            </span>
+          </div>
+          <div className="bloc-info">
+            <span>Etat:</span>
+            {roleUser === "veterinaire" ? (
+              <input
+                type="text"
+                name="etat"
+                onChange={handleInfoAnimal}
+                value={infoAnimal.etat}
+              />
+            ) : (
+              <span className="span-formulaire">{infoAnimal.etat}</span>
             )}
-            <div className="bloc-info">
-              <span>Prénom:</span>
-              <span className="span-formulaire">
-                {!isEmpty(selectedAnimal) &&
-                  animals[selectedAnimal.indexAnimal].prenom}
-              </span>
-            </div>
-            <div className="bloc-info">
-              <span>Race:</span>
-              <span className="span-formulaire">
-                {!isEmpty(selectedAnimal) &&
-                  animals[selectedAnimal.indexAnimal].label}
-              </span>
-            </div>
-            <div className="bloc-info">
-              <span>Etat:</span>
-              {roleUser === "veterinaire" ? (
-                <input
-                  type="text"
-                  name="etat"
-                  onChange={handleInfoAnimal}
-                  value={infoAnimal.etat}
-                />
-              ) : (
-                <span className="span-formulaire">{infoAnimal.etat}</span>
-              )}
-            </div>
-            <div className="bloc-info">
-              <span>Détail:</span>
-              {roleUser === "veterinaire" ? (
-                <input
-                  type="text"
-                  name="detail"
-                  onChange={handleInfoAnimal}
-                  value={infoAnimal.detail}
-                />
-              ) : (
-                <span className="span-formulaire">{infoAnimal.detail}</span>
-              )}
-            </div>
-            <div className="bloc-info">
-              <span>Nrt.conseil:</span>
-              {roleUser === "veterinaire" ? (
-                <input
-                  type="text"
-                  name="nrtconseille"
-                  onChange={handleInfoAnimal}
-                  value={infoAnimal.nrtconseille}
-                />
-              ) : (
-                <span className="span-formulaire">
-                  {infoAnimal.nrtconseille}
-                </span>
-              )}
-            </div>
-            <div className="bloc-info">
-              <span>Nourriture:</span>
-              {roleUser === "employe" ? (
-                <input
-                  type="text"
-                  name="nourriture"
-                  onChange={handleInfoAnimal}
-                  value={infoAnimal.nourriture}
-                />
-              ) : (
-                <span className="span-formulaire">{infoAnimal.nourriture}</span>
-              )}
-            </div>
-            <div className="bloc-info">
-              <span>Qt.conseil:</span>
-              {roleUser === "veterinaire" ? (
-                <input
-                  type="text"
-                  name="qtconseille"
-                  onChange={handleInfoAnimal}
-                  value={infoAnimal.qtconseille}
-                />
-              ) : (
-                <span className="span-formulaire">
-                  {infoAnimal.qtconseille}
-                </span>
-              )}
-            </div>
-            <div className="bloc-info">
-              <span>Quantité:</span>
-              {roleUser === "employe" ? (
-                <input
-                  type="text"
-                  name="grammage"
-                  onChange={handleInfoAnimal}
-                  value={infoAnimal.grammage}
-                />
-              ) : (
-                <span className="span-formulaire">{infoAnimal.grammage}</span>
-              )}
-            </div>
-            <button className="button-formulaire" type="submit">
-              Valider
-            </button>
-          </form>
-        </div>
+          </div>
+          <div className="bloc-info">
+            <span>Détail:</span>
+            {roleUser === "veterinaire" ? (
+              <input
+                type="text"
+                name="detail"
+                onChange={handleInfoAnimal}
+                value={infoAnimal.detail}
+              />
+            ) : (
+              <span className="span-formulaire">{infoAnimal.detail}</span>
+            )}
+          </div>
+          <div className="bloc-info">
+            <span>Nrt.conseil:</span>
+            {roleUser === "veterinaire" ? (
+              <input
+                type="text"
+                name="nrtconseille"
+                onChange={handleInfoAnimal}
+                value={infoAnimal.nrtconseille}
+              />
+            ) : (
+              <span className="span-formulaire">{infoAnimal.nrtconseille}</span>
+            )}
+          </div>
+          <div className="bloc-info">
+            <span>Nourriture:</span>
+            {roleUser === "employe" ? (
+              <input
+                type="text"
+                name="nourriture"
+                onChange={handleInfoAnimal}
+                value={infoAnimal.nourriture}
+              />
+            ) : (
+              <span className="span-formulaire">{infoAnimal.nourriture}</span>
+            )}
+          </div>
+          <div className="bloc-info">
+            <span>Qt.conseil:</span>
+            {roleUser === "veterinaire" ? (
+              <input
+                type="text"
+                name="qtconseille"
+                onChange={handleInfoAnimal}
+                value={infoAnimal.qtconseille}
+              />
+            ) : (
+              <span className="span-formulaire">{infoAnimal.qtconseille}</span>
+            )}
+          </div>
+          <div className="bloc-info">
+            <span>Quantité:</span>
+            {roleUser === "employe" ? (
+              <input
+                type="text"
+                name="grammage"
+                onChange={handleInfoAnimal}
+                value={infoAnimal.grammage}
+              />
+            ) : (
+              <span className="span-formulaire">{infoAnimal.grammage}</span>
+            )}
+          </div>
+          <button className="button-formulaire" type="submit">
+            Valider
+          </button>
+        </form>
       </div>
     </div>
   );

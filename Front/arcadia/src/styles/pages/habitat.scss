@@ -6,18 +6,27 @@
     background-color: $herbe;
 
 
-    >.container-services {
-        overflow: hidden; 
+    >.header-habitat{
+        height: 500px;
+        width: 100%;
+        background-image: url("../../assets/deco/habitat.jpg");
+        background-position: center;
+        background-attachment: fixed;
+        background-size:cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       
-        > .background-image {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-    }    
-
-   
-
+        >span{
+            font-size: 2.5em;
+            color: $text;
+            text-shadow: $textShadow;
+            width: auto;
+            margin-left: 20px;
+        } 
+    }
+    
     >.container-habitats{
         min-height: 120vh;
         height: auto;
@@ -28,8 +37,6 @@
         padding-top: 50px;
         padding-bottom: 50px;
         align-items: center;
-        
-        
     }
 }
 

@@ -1,7 +1,9 @@
 
 .container-admin{
   height: auto;
-  width: 100vw;
+  min-height: 100vh;
+  max-width: 100vw;
+  flex-grow: 1;
 
   .admin{
     display: flex;
@@ -13,22 +15,56 @@
     align-items: center;  
     padding-bottom: 20px; 
     padding-top: 100px; 
-    
-  }
-  }
-  
-  /************************************MEDIA QUERIES******************************************/
-@media screen and (min-width: 1500px) {
-  
-  .container-admin .admin {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: flex-start;  
-    
 
-    
-    
+    >.sous-menu{
+      display: flex;
+      justify-content: center;
+      height: 40px;
+      padding: 10px;
+      width: 300px;
+      border: 4px solid $terre;
+      border-radius: 25px;
+      
+        >.css-b62m3t-container {
+          width: 250px;
+        }    
+    }     
   }
-
 }
+  
+.sous-menu-container{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 1500px) {
+  .container-admin{
+
+    .sous-menu-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 50px;
+      margin-left: 50px;
+      //justify-content: space-around;
+    }
+    
+  }
+    .sous-menu-container::after {
+      content: "";
+      flex: auto;
+    }
+    
+    .sous-menu-container > * {
+      margin-bottom: 20px; /* ajustez selon vos besoins */
+    }
+    
+    .sous-menu-container > *:nth-last-child(n+1):nth-last-child(-n+4) {
+      margin-bottom: 0;
+    }
+  }

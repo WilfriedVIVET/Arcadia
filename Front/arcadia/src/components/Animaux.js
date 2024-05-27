@@ -168,38 +168,30 @@ const Animaux = () => {
         <span>ANIMAUX</span>
       </div>
 
-      <form onSubmit={submitAnimal} className="formulaire-race">
-        <div className="formulaire-bloc">
-          <label htmlFor="prenom" className="label-formulaire">
-            Prenom:
-          </label>
-
-          <input
-            type="text"
-            name="prenom"
-            className="input-formulaire"
-            onChange={handleInfo}
-          />
-        </div>
-
-        <div className="bloc-animal">
-          <span>Choisissez une race:</span>
-          <Select
-            styles={customStyles}
-            options={optionsRace}
-            value={selectedRace}
-            onChange={(selectedOption) => setSelectedRace(selectedOption)}
-          />
-        </div>
-        <div className="bloc-animal">
-          <span>Choisissez une habitat:</span>
-          <Select
-            styles={customStyles}
-            options={optionsHabitat}
-            value={selectedHabitat}
-            onChange={(selectedOption) => setSelectedHabitat(selectedOption)}
-          />
-        </div>
+      <form onSubmit={submitAnimal} className="formulaire">
+        <label htmlFor="prenom" className="label-formulaire">
+          Prenom:
+        </label>
+        <input
+          type="text"
+          name="prenom"
+          className="input-formulaire"
+          onChange={handleInfo}
+        />
+        <label className="label-formulaire">Choisissez une race:</label>
+        <Select
+          styles={customStyles}
+          options={optionsRace}
+          value={selectedRace}
+          onChange={(selectedOption) => setSelectedRace(selectedOption)}
+        />
+        <label className="label-formulaire">Choisissez une habitat:</label>
+        <Select
+          styles={customStyles}
+          options={optionsHabitat}
+          value={selectedHabitat}
+          onChange={(selectedOption) => setSelectedHabitat(selectedOption)}
+        />
         <div className="deposer">
           {droppedImage ? (
             <img
@@ -214,8 +206,8 @@ const Animaux = () => {
 
         <button className="button-formulaire">Valider</button>
       </form>
-      <div className="bloc-suppression">
-        <span>Choisissez une animal à supprimer:</span>
+      <div className="formulaire">
+        <label className="label-formulaire">Animal à supprimer:</label>
         <Select
           styles={customStyles}
           options={optionsAnimaux}

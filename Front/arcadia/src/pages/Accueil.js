@@ -57,7 +57,7 @@ const Accueil = () => {
     <>
       <div className="accueil">
         <Navbar />
-        <div className="header">
+        <div className="header-accueil">
           <span>Parc ouvert toute l'année.</span>
         </div>
 
@@ -120,23 +120,25 @@ const Accueil = () => {
             <div className="trait"></div>
             <span className="title">VOS AVIS</span>
           </div>
-          <div className="carrousel">
-            <Slider {...settings}>
-              {!isEmpty(avis) &&
-                avis.map((avisUser, index) => (
-                  <div className="bloc-avis" key={index}>
-                    <li className="li-avis">
-                      {avisUser.pseudo}: <br />
-                      {avisUser.commentaire}
-                    </li>
-                  </div>
-                ))}
-            </Slider>
+          <div className="formulaire">
+            <div className="carrousel">
+              <Slider {...settings}>
+                {!isEmpty(avis) &&
+                  avis.map((avisUser, index) => (
+                    <div className="bloc-avis" key={index}>
+                      <li className="li-avis">
+                        {avisUser.pseudo}: <br />
+                        {avisUser.commentaire}
+                      </li>
+                    </div>
+                  ))}
+              </Slider>
+            </div>
+            <button className="button-accueil-avis" onClick={handleShowModale}>
+              Laissez un avis
+            </button>
+            {showModalAvis && <ModalAvis handleShowModale={handleShowModale} />}
           </div>
-          <button className="button-formulaire" onClick={handleShowModale}>
-            Laissez un avis
-          </button>
-          {showModalAvis && <ModalAvis handleShowModale={handleShowModale} />}
         </div>
         <div className="container-habitat feuille">
           <div className="header-contenu">

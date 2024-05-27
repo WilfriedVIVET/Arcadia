@@ -5,7 +5,6 @@ import store from "../Redux/store/store";
 import { getServices } from "../Redux/actions/services.action";
 import { isEmpty } from "../Utils/Utils";
 import { useDispatch, useSelector } from "react-redux";
-import backgroundImage from "../assets/deco/pont.jpg";
 
 const Services = () => {
   const dispatch = useDispatch();
@@ -20,13 +19,10 @@ const Services = () => {
     <>
       <div className="body-services">
         <Navbar />
-        <div className="container-services">
-          <img className="background-image" src={backgroundImage} alt="Pont" />
+        <div className="header-service">
+          <span>NOS SERVICES</span>
         </div>
-        <div className="header-contenu">
-          <div className="trait"></div>
-          <span className="title">NOS SERVICES</span>
-        </div>
+
         <div className="service-service">
           {!isEmpty(services) &&
             services.map((service, index) => (

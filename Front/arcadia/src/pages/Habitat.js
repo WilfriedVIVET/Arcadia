@@ -6,7 +6,6 @@ import { isEmpty } from "../Utils/Utils";
 import { useSelector, useDispatch } from "react-redux";
 import { getAnimaux } from "../Redux/actions/animaux.action";
 import { getHabitatComplet } from "../Redux/actions/habitatComplet.action";
-import backgroundImage from "../assets/deco/habitat.jpg";
 import store from "../Redux/store/store";
 
 const Habitat = () => {
@@ -24,13 +23,10 @@ const Habitat = () => {
     <>
       <div className="body-habitat">
         <Navbar />
-        <div className="container-services">
-          <img className="background-image" src={backgroundImage} alt="Pont" />
+        <div className="header-habitat">
+          <span>NOS HABITATS</span>
         </div>
-        <div className="header-contenu">
-          <div className="trait"></div>
-          <span className="title">NOS HABITAT</span>
-        </div>
+
         <div className="container-habitats">
           {Array.isArray(habitatComplet) && !isEmpty(habitatComplet) ? (
             habitatComplet.map((habitat, index) => (

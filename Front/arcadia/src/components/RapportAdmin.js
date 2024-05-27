@@ -28,11 +28,11 @@ const RapportAdmin = () => {
 
   return (
     <>
-      <div className="container-tableau-admin">
+      <div className="container-rapport">
         <div className="header-formulaire">
           <span>RAPPORT VETERINAIRE</span>
         </div>
-        <table className="tableau rapport">
+        <table className="tableau-admin">
           <thead>
             <tr>
               <th onClick={() => requestSort("rapport_id")}>Rapport_id</th>
