@@ -1,46 +1,47 @@
 @font-face {
-    font-family: 'PTSansNarrow';
-    src: url('../assets/fonts/PTSansNarrow-Bold.ttf') format('truetype'),
-         
-    
-  }
+  font-family: 'PTSansNarrow';
+  src: url('../assets/fonts/PTSansNarrow-Bold.ttf') format('truetype'),
 
- 
-/* variable sass */
-$terre: #FFD84B; //255 216 75 ou #B46200 ou #FFd84b
-$trait:#BD6200; //180 98 0
-$feuille: #273403;
-$herbe:#3d6734; //61 103 52
-$eau:#489dff;
-$text:rgb(252, 252, 252);
-$alert:rgb(182, 55, 55);
 
-$boxShadow:0px 10px 5px 0px rgba(0,0,0,0.75);
-$boxShadowButton:0px 10px 5px 0px rgba(150, 100, 6, 0.75);
-$textShadow: -1px -1px 0 #000,  
-1px -1px 0 #000,
--1px 1px 0 #000,
-1px 1px 0 #000;
-
-*{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'font-familly', sans-serif;
-    letter-spacing: 2px;
-    
 }
 
-h2{
+
+/* variable sass */
+$terre: #FFD84B; //255 216 75 ou #B46200 ou #FFd84b
+$trait: #BD6200; //180 98 0
+$feuille: #273403;
+$herbe: #3d6734; //61 103 52
+$eau: #489dff;
+$text: rgb(252, 252, 252);
+$alert: rgb(182, 55, 55);
+
+$boxShadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.75);
+$boxShadowButton: 0px 10px 5px 0px rgba(150, 100, 6, 0.75);
+$textShadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'font-familly', sans-serif;
+  letter-spacing: 2px;
+
+}
+
+h2 {
   color: $feuille;
 }
 
-body{
+body {
   overflow-x: hidden;
 }
+
 //body
-.body-container{
+.body-container {
   display: flex;
   flex-direction: column;
   padding-top: 100px;
@@ -48,26 +49,26 @@ body{
   height: auto;
   background-color: $herbe;
   width: 100vw;
-  align-items: center;  
-  padding-bottom: 20px ;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
 //Formulaire type
-.container-formulaire{
+.container-formulaire {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   min-height: 200px;
   height: auto;
   width: 90%;
-  max-width:600px ;
+  max-width: 600px;
   background-color: $feuille;
   box-shadow: $boxShadow;
   border-radius: 25px;
   margin: 20px 0px;
 }
- 
-.header-contenu{
+
+.header-contenu {
   height: 300px;
   width: 100%;
   display: flex;
@@ -75,76 +76,82 @@ body{
   justify-content: space-around;
 }
 
-.header-formulaire{
+.header-formulaire {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: $terre;
+  color: $feuille;
+  font-size: 1.1em;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+
+  >span {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
     height: 50px;
     width: 100%;
-    background-color: $terre;
     color: $feuille;
-    font-size: 1.1em;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-
-    >span{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      height: 50px;
-      width: 100%;
-      color: $feuille;
-    }
+  }
 }
- 
-.formulaire{
-    display: flex;
-    flex-direction: column;
-    margin: 20px 0px;
-    height: 80%;
-    width: 90%;
-    align-items: center;
-    gap: 20px;
-    
-}   
-      
-.label-formulaire{
+
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+  height: 80%;
+  width: 90%;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.label-formulaire {
   color: $text;
   font-size: 1.3em;
   font-weight: bold;
+  width: auto;
+
+}
+
+.input-formulaire {
+  display: flex;
+  height: 40px;
+  border-radius: 25px;
+  border: 2px solid $terre;
+  background-color: $herbe;
+  color: $terre;
+  font-weight: bold;
+  text-transform: uppercase;
   width: 100%;
- 
-}    
-      
-.input-formulaire{
-        height: 40px;
-        border-radius: 25px;
-        border: 2px solid $terre;
-        background-color: $herbe;
-        color: $terre;
-        font-size: 1em;
-        font-weight: bold;
-        width: 100%;
-        
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+
 }
-          
-.textArea-formulaire{
-        border-radius: 25px;
-        border: 2px solid $terre;
-        background-color: $herbe;
-        width: 100%;
-        color: $terre;
-        font-size: 1em;
-        font-weight: bold;
-        text-transform: uppercase;
-        resize: none;
-        overflow: auto;
-        scrollbar-width: none;
-        height: 150px;
+
+.textArea-formulaire {
+  border-radius: 25px;
+  border: 2px solid $terre;
+  background-color: $herbe;
+  width: 100%;
+  color: $terre;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  resize: none;
+  overflow: auto;
+  scrollbar-width: none;
+  height: 150px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
-      
-.button-formulaire{
+
+.button-formulaire {
   height: 40px;
   width: 90%;
   border-radius: 25px;
@@ -158,7 +165,11 @@ body{
   box-shadow: $boxShadowButton;
 }
 
-.bloc-petit-bouton{
+.button-formulaire:hover {
+  cursor: pointer;
+}
+
+.bloc-petit-bouton {
   display: flex;
   align-items: center;
   height: 80px;
@@ -169,7 +180,7 @@ body{
   justify-content: center;
 }
 
-.petit-bouton{
+.petit-bouton {
   height: 40px;
   width: auto;
   padding: 5px;
@@ -181,10 +192,10 @@ body{
   font-weight: bold;
   text-transform: uppercase;
   margin-top: 20px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
-.trait{
+.trait {
   height: 8px;
   width: 70%;
   border-radius: 25px;

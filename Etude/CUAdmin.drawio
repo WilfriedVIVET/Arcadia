@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" modified="2024-04-29T13:44:41.630Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="z2580LY7kZAv4vEZpHyh" version="24.3.1" type="device">
+  <diagram name="Page-1" id="VsNjFLX9fTb_JOZCghUM">
+    <mxGraphModel dx="1434" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2tWf5ILsuSoZBio-wlPk-1" target="2tWf5ILsuSoZBio-wlPk-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2tWf5ILsuSoZBio-wlPk-1" target="2tWf5ILsuSoZBio-wlPk-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2tWf5ILsuSoZBio-wlPk-1" target="2tWf5ILsuSoZBio-wlPk-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2tWf5ILsuSoZBio-wlPk-1" target="2tWf5ILsuSoZBio-wlPk-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2tWf5ILsuSoZBio-wlPk-1" target="2tWf5ILsuSoZBio-wlPk-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-1" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="90" y="360" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-2" value="Création compte" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="70" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-3" value="Modifier horaires" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-4" value="Modifier services" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-5" value="Modifier habitats" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-6" value="Voir rapport véterinaire" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="520" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-7" value="Modifier animaux&lt;div&gt;CRUD&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-8" value="Voir nbr consulation/animal" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="610" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.425;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="2tWf5ILsuSoZBio-wlPk-1" target="2tWf5ILsuSoZBio-wlPk-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.008;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="2tWf5ILsuSoZBio-wlPk-1" target="2tWf5ILsuSoZBio-wlPk-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.008;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="2tWf5ILsuSoZBio-wlPk-1" target="2tWf5ILsuSoZBio-wlPk-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2tWf5ILsuSoZBio-wlPk-16" value="Voir rapport veterinaire" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="700" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hZvyihvmPmky45CHOYk7-1" value="Se connecter" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="360" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

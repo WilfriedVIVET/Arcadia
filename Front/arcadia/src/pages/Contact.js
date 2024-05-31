@@ -34,7 +34,6 @@ const Contact = () => {
       titre: encodeURIComponent(titre),
       description: encodeURIComponent(description),
     };
-
     postContact(encodedContact);
   };
 

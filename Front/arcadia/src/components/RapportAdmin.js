@@ -6,8 +6,9 @@ const RapportAdmin = () => {
   const rapports = useSelector((state) => state.getRapport);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
 
+  //Trie par ordre alphabétique des colonnes rapport.
   const sortedRapports = React.useMemo(() => {
-    if (!sortConfig.key) return rapports;
+    if (!sortConfig.key || isEmpty(rapports)) return rapports;
     const sorted = [...rapports].sort((a, b) => {
       if (a[sortConfig.key] < b[sortConfig.key])
         return sortConfig.direction === "asc" ? -1 : 1;
@@ -27,11 +28,13 @@ const RapportAdmin = () => {
   };
 
   return (
-    <>
-      <div className="container-rapport">
-        <div className="header-formulaire">
-          <span>RAPPORT VETERINAIRE</span>
-        </div>
+    <div className="container-rapport">
+      <div className="header-formulaire">
+        <span>RAPPORT VETERINAIRE</span>
+      </div>
+      {isEmpty(sortedRapports) ? (
+        <p>Aucun rapport disponible</p>
+      ) : (
         <table className="tableau-admin">
           <thead>
             <tr>
@@ -46,23 +49,22 @@ const RapportAdmin = () => {
             </tr>
           </thead>
           <tbody>
-            {!isEmpty(sortedRapports) &&
-              sortedRapports.map((rapport, index) => (
-                <tr key={index}>
-                  <td>{rapport.rapport_id}</td>
-                  <td>{rapport.date_rapport}</td>
-                  <td>{rapport.prenom}</td>
-                  <td>{rapport.label}</td>
-                  <td>{rapport.etat}</td>
-                  <td>{rapport.detail_etat}</td>
-                  <td>{rapport.nrtconseille}</td>
-                  <td>{rapport.qtconseille}</td>
-                </tr>
-              ))}
+            {sortedRapports.map((rapport, index) => (
+              <tr key={index}>
+                <td>{rapport.rapport_id}</td>
+                <td>{rapport.date_rapport}</td>
+                <td>{rapport.prenom}</td>
+                <td>{rapport.label}</td>
+                <td>{rapport.etat}</td>
+                <td>{rapport.detail_etat}</td>
+                <td>{rapport.nrtconseille}</td>
+                <td>{rapport.qtconseille}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
-      </div>
-    </>
+      )}
+    </div>
   );
 };
 

@@ -29,7 +29,6 @@ const Avis = () => {
       isValid: avisCheckboxState[avisId] ? "1" : "0",
     }));
     await postValidAvis(validatedAvis);
-    console.log(validatedAvis);
   };
 
   // Bouton supprimer
@@ -57,9 +56,15 @@ const Avis = () => {
               <p>{avisUser.commentaire}</p>
 
               <div className="bloc-info-bouton">
-                <span>Visible:</span>
+                <label
+                  htmlFor={`checkbox-${avisUser.avis_id}`}
+                  className="label-formulaire"
+                >
+                  Visible:
+                </label>
                 <input
                   type="checkbox"
+                  id={`checkbox-${avisUser.avis_id}`}
                   checked={
                     avisCheckboxState[avisUser.avis_id] || avisUser.isValid
                   }

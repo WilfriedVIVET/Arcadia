@@ -26,7 +26,6 @@ const Habitat = () => {
         <div className="header-habitat">
           <span>NOS HABITATS</span>
         </div>
-
         <div className="container-habitats">
           {Array.isArray(habitatComplet) && !isEmpty(habitatComplet) ? (
             habitatComplet.map((habitat, index) => (

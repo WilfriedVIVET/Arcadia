@@ -90,19 +90,27 @@ const Race = () => {
         <span>Race</span>
       </div>
       <div className="formulaire">
-        <label className="label-formulaire">Choisissez une race:</label>
+        <label htmlFor="race-choix" className="label-formulaire">
+          Choisissez une race:
+        </label>
         <Select
           styles={customStyles}
           options={optionsRace}
           value={selectedRace}
+          name="race-choix"
+          id="race-choix"
           onChange={(selectedOption) => setSelectedRace(selectedOption)}
         />
 
-        <label className="label-formulaire">Ajouter une race:</label>
+        <label htmlFor="race-ajout" className="label-formulaire">
+          Ajouter une race:
+        </label>
         <input
           type="text"
           className="input-formulaire"
           onChange={handleNewRace}
+          name="race-ajout"
+          id="race-ajout"
         />
 
         <button className="button-formulaire" onClick={submitRace}>

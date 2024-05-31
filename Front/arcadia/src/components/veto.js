@@ -35,7 +35,6 @@ const Veto = () => {
 
   // Envoie du nouveau commentaire sur l'état d'un habitat
   const submitHabitat = () => {
-    console.log("habitat = ", habitat);
     postEtatHabitat(habitat);
   };
 

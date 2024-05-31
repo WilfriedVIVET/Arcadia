@@ -61,7 +61,7 @@ const Accueil = () => {
           <span>Parc ouvert toute l'année.</span>
         </div>
 
-        <div className="container-rubrique herbe">
+        <section className="container-rubrique herbe">
           <div className="header-contenu">
             <div className="trait"></div>
             <span className="title">ARCADIA</span>
@@ -74,8 +74,8 @@ const Accueil = () => {
               laboriosam tenetur maiores ut.
             </p>
           </div>
-        </div>
-        <div className="container-bloc feuille">
+        </section>
+        <section className="container-bloc feuille">
           <div className="header-contenu">
             <div className="trait"></div>
             <span className="title">NOS SERVICES</span>
@@ -86,8 +86,8 @@ const Accueil = () => {
                 <Vignette service={service} key={index} />
               ))}
           </div>
-        </div>
-        <div className="container-habitat  ">
+        </section>
+        <section className="container-habitat  ">
           <Link to={"/habitats"}>
             <div className="header-contenu">
               <div className="trait"></div>
@@ -100,8 +100,8 @@ const Accueil = () => {
                 ))}
             </div>
           </Link>
-        </div>
-        <div className="container-habitat feuille">
+        </section>
+        <section className="container-habitat feuille">
           <div className="header-contenu">
             <div className="trait"></div>
             <span className="title">NOS ANIMAUX</span>
@@ -114,8 +114,8 @@ const Accueil = () => {
                 ))}
             </ul>
           </div>
-        </div>
-        <div className="container-habitat herbe">
+        </section>
+        <section className="container-habitat herbe">
           <div className="header-contenu">
             <div className="trait"></div>
             <span className="title">VOS AVIS</span>
@@ -139,8 +139,8 @@ const Accueil = () => {
             </button>
             {showModalAvis && <ModalAvis handleShowModale={handleShowModale} />}
           </div>
-        </div>
-        <div className="container-habitat feuille">
+        </section>
+        <section className="container-habitat feuille">
           <div className="header-contenu">
             <div className="trait"></div>
             <span className="title">NOS HORAIRES</span>
@@ -156,7 +156,7 @@ const Accueil = () => {
                 </div>
               ))}
           </div>
-        </div>
+        </section>
       </div>
       <Footer />
     </>

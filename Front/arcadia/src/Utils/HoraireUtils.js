@@ -4,10 +4,10 @@ import axios from "axios";
 export const postHoraire = async (newHoraire) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postHoraire.php",
+      "http://localhost/API_ARCADIA/Post/postHoraire.php",
       JSON.stringify(newHoraire)
     );
-    alert(response.data.message);
+    return response.data.message;
   } catch (error) {
     alert(error.message);
     throw error;

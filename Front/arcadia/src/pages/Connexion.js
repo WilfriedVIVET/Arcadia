@@ -5,17 +5,17 @@ import { getRole } from "../Utils/CompteUtils";
 import { useAppStore } from "../storeZustand";
 import { useNavigate } from "react-router-dom";
 
+import Alert from "../components/Alert";
+
 const Connexion = () => {
   const { roleUser, updateRole } = useAppStore();
-
+  const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
 
   const [account, setAccount] = useState({
     email: "",
     password: "",
   });
-
-  const [showAlert, setShowAlert] = useState(false);
 
   const handleUser = (e) => {
     setShowAlert(false);
@@ -27,7 +27,7 @@ const Connexion = () => {
     }));
   };
 
-  //Vérification du role et redirection de la page.
+  // Vérification du rôle et redirection de la page.
   const redirectPage = useCallback(
     (role) => {
       switch (role) {
@@ -55,14 +55,12 @@ const Connexion = () => {
 
   const submitConnexion = (e) => {
     e.preventDefault();
-    console.log("role = " + roleUser);
+
     getRole(account).then((role) => {
-      // Vérification des bons identifiants.
       if (!role) {
         setShowAlert(true);
         return;
       }
-
       updateRole(role);
     });
   };
@@ -106,9 +104,14 @@ const Connexion = () => {
               Connexion
             </button>
           </form>
-          <span className={showAlert ? "alert show" : "alert "}>
-            Identifiants incorrects. Veuillez réessayer.
-          </span>
+          {showAlert && (
+            <Alert
+              message={
+                "Identifiant ou mot de passe incorrect, Veuillez réessayer !"
+              }
+              color={"error"}
+            />
+          )}
         </div>
       </div>
       <Footer />

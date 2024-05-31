@@ -4,10 +4,10 @@ import axios from "axios";
 export const postEtatHabitat = async (newEtat) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postEtat.php",
+      "http://localhost/API_ARCADIA/Post/postEtat.php",
       JSON.stringify(newEtat)
     );
-    alert(response.data.message);
+    return response.data.message;
   } catch (error) {
     alert(error.message);
     throw error;
@@ -18,10 +18,10 @@ export const postEtatHabitat = async (newEtat) => {
 export const postHabitat = async (newHabitat) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postHabitat.php",
+      "http://localhost/API_ARCADIA/Post/postHabitat.php",
       JSON.stringify(newHabitat)
     );
-    alert(JSON.stringify(response.data));
+    return response.data.message;
   } catch (error) {
     alert(error.message);
     throw error;
@@ -32,7 +32,7 @@ export const postHabitat = async (newHabitat) => {
 export const deleteHabitat = async (habitat) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/deleteHabitat.php",
+      "http://localhost/API_ARCADIA/Delete/deleteHabitat.php",
       JSON.stringify(habitat)
     );
     alert(JSON.stringify(response.data));

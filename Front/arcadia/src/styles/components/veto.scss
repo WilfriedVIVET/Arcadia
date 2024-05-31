@@ -41,12 +41,21 @@
     align-items: center;
     color: $text;
     font-weight: bold;
-    justify-content: space-around;
+    justify-content: space-between;
     
+    >span{
+        width: 50%;
+   
+    }
+    >input{
+        width: 50%;
+    }
+
     >.date{
         display: flex;
         height: auto;
-        width: auto;
+        width: 100%;
+        justify-content: center;
     }
 
 }   

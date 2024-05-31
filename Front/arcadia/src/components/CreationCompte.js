@@ -15,7 +15,7 @@ const CreationCompte = () => {
   });
 
   const [account, setAccount] = useState({
-    role: "2",
+    role_id: "2",
     email: "",
     prenom: "",
     nom: "",
@@ -116,7 +116,7 @@ const CreationCompte = () => {
           </table>
 
           <div
-            className="modif-utilisateur"
+            className="formulaire"
             style={{ display: showbouton ? "flex" : "none" }}
           >
             <input
@@ -174,58 +174,55 @@ const CreationCompte = () => {
               className="input-radio"
             />
           </div>
-          <div className="formulaire-bloc">
-            <label htmlFor="email" className="label-formulaire">
-              Email:
-            </label>
-            <input
-              type="text"
-              name="email"
-              className="input-formulaire"
-              id="email"
-              onChange={handleUserChange}
-              required
-            />
-          </div>
-          <div className="formulaire-bloc">
-            <label htmlFor="prenom" className="label-formulaire">
-              Prénom:
-            </label>
-            <input
-              type="text"
-              name="prenom"
-              className="input-formulaire"
-              id="prenom"
-              onChange={handleUserChange}
-              required
-            />
-          </div>
-          <div className="formulaire-bloc">
-            <label htmlFor="password" className="label-formulaire">
-              Nom:
-            </label>
-            <input
-              type="text"
-              name="nom"
-              className="input-formulaire"
-              id="nom"
-              onChange={handleUserChange}
-              required
-            />
-          </div>
-          <div className="formulaire-bloc">
-            <label htmlFor="password" className="label-formulaire">
-              Mot de passe:
-            </label>
-            <input
-              type="text"
-              name="password"
-              className="input-formulaire"
-              id="password"
-              onChange={handleUserChange}
-              required
-            />
-          </div>
+
+          <label htmlFor="email" className="label-formulaire">
+            Email:
+          </label>
+          <input
+            type="text"
+            name="email"
+            className="input-formulaire"
+            id="email"
+            onChange={handleUserChange}
+            required
+          />
+
+          <label htmlFor="prenom" className="label-formulaire">
+            Prénom:
+          </label>
+          <input
+            type="text"
+            name="prenom"
+            className="input-formulaire"
+            id="prenom"
+            onChange={handleUserChange}
+            required
+          />
+
+          <label htmlFor="password" className="label-formulaire">
+            Nom:
+          </label>
+          <input
+            type="text"
+            name="nom"
+            className="input-formulaire"
+            id="nom"
+            onChange={handleUserChange}
+            required
+          />
+
+          <label htmlFor="password" className="label-formulaire">
+            Mot de passe:
+          </label>
+          <input
+            type="text"
+            name="password"
+            className="input-formulaire"
+            id="password"
+            onChange={handleUserChange}
+            required
+          />
+
           <button className="button-formulaire" type="submit">
             CREER
           </button>

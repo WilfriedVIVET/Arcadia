@@ -4,10 +4,10 @@ import axios from "axios";
 export const updateService = async (serviceUpdated) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/updateService.php",
+      "http://localhost/API_ARCADIA/Update/updateService.php",
       JSON.stringify(serviceUpdated)
     );
-    alert(response.data.message);
+    return response.data.message;
   } catch (error) {
     alert(error);
     throw error;
@@ -18,10 +18,10 @@ export const updateService = async (serviceUpdated) => {
 export const deleteService = async (serviceDelete) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/deleteService.php",
+      "http://localhost/API_ARCADIA/Delete/deleteService.php",
       JSON.stringify(serviceDelete)
     );
-    alert(response.data.message);
+    return response.data.message;
   } catch (error) {
     alert(error);
     throw error;
@@ -32,7 +32,7 @@ export const deleteService = async (serviceDelete) => {
 export const createService = async (newService) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/createService.php",
+      "http://localhost/API_ARCADIA/Create/createService.php",
       JSON.stringify(newService)
     );
     alert(response.data.message);

@@ -41,7 +41,7 @@ const VignetteHabitatComplet = ({ habitat }) => {
     try {
       await axios.post("http://localhost:3008/animals", { prenom });
     } catch (error) {
-      console.log("problème bdd mongo vignette");
+      console.error("problème bdd mongo vignette", error);
     }
   };
 

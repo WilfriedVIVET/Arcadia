@@ -72,9 +72,7 @@ const Admin = () => {
     }),
   };
 
-  useEffect(() => {
-    console.log("selected = ", selectedOption);
-  }, [selectedOption]);
+  useEffect(() => {}, [selectedOption]);
 
   // Composant à afficher en fonction de selectedOption
   const getComponent = () => {
@@ -86,7 +84,12 @@ const Admin = () => {
       case "habitats":
         return <HabitatsAdmin />;
       case "animaux":
-        return [<Animaux />, <Race />, <Mongo />];
+        return [
+          <Animaux key="animaux" />,
+          <Race key="race" />,
+          <Mongo key="mongo" />,
+        ];
+
       case "comptes":
         return <CreationCompte />;
       case "horaires":

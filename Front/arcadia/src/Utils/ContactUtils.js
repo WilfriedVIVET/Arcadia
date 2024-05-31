@@ -4,10 +4,10 @@ import axios from "axios";
 export const postContact = async (contact) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postContact.php",
+      "http://localhost/API_ARCADIA/Post/postContact.php",
       JSON.stringify(contact)
     );
-    alert(response.data.message);
+    return response.data.message;
   } catch (error) {
     alert(error);
     throw error;

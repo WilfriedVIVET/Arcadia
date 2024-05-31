@@ -129,7 +129,6 @@ const Animaux = () => {
   //Suppression de l'animal
   const handleDeleteAnimal = () => {
     deleteAnimal(animaIdSelected);
-    console.log("test ", animaIdSelected);
     dispatch(getAnimaux);
   };
 
@@ -175,22 +174,29 @@ const Animaux = () => {
         <input
           type="text"
           name="prenom"
+          id="prenom"
           className="input-formulaire"
           onChange={handleInfo}
         />
-        <label className="label-formulaire">Choisissez une race:</label>
+        <label htmlFor="race" className="label-formulaire">
+          Choisissez une race:
+        </label>
         <Select
           styles={customStyles}
           options={optionsRace}
           value={selectedRace}
           onChange={(selectedOption) => setSelectedRace(selectedOption)}
+          inputId="race"
         />
-        <label className="label-formulaire">Choisissez une habitat:</label>
+        <label htmlFor="habitat" className="label-formulaire">
+          Choisissez une habitat:
+        </label>
         <Select
           styles={customStyles}
           options={optionsHabitat}
           value={selectedHabitat}
           onChange={(selectedOption) => setSelectedHabitat(selectedOption)}
+          inputId="habitat"
         />
         <div className="deposer">
           {droppedImage ? (
@@ -207,12 +213,15 @@ const Animaux = () => {
         <button className="button-formulaire">Valider</button>
       </form>
       <div className="formulaire">
-        <label className="label-formulaire">Animal à supprimer:</label>
+        <label htmlFor="animal-supprimer" className="label-formulaire">
+          Animal à supprimer:
+        </label>
         <Select
           styles={customStyles}
           options={optionsAnimaux}
           value={selectedAnimal}
           onChange={(selectedOption) => setSelectedAnimal(selectedOption)}
+          inputId="animal-supprimer"
         />
         <button className="button-formulaire" onClick={handleDeleteAnimal}>
           Supprimer

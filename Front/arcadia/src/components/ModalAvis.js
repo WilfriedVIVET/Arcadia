@@ -1,31 +1,63 @@
 import React, { useState } from "react";
 import { postAvis } from "../Utils/AvisUtils";
+import Alert from "../components/Alert";
 
 const ModalAvis = ({ handleShowModale }) => {
+  const [showAlert, setShowAlert] = useState(false);
+  const [message, setMessage] = useState("");
   const [avis, setAvis] = useState({
     pseudo: "",
     commentaire: "",
     isValid: "0",
   });
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Fonction pour fermer la modal lors du clic sur la croix
   const handleCloseModal = () => {
     handleShowModale();
   };
 
-  //Récupération de l'avis et pseudo.
   const handleAvis = (e) => {
     const { name, value } = e.target;
     setAvis((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: "",
+    }));
+  };
+
+  //Validation du formulaire.
+  const validateForm = () => {
+    const newErrors = {};
+    if (!avis.pseudo.trim()) newErrors.pseudo = "Le pseudo est requis.";
+    if (!avis.commentaire.trim())
+      newErrors.commentaire = "Le commentaire est requis.";
+    return newErrors;
   };
 
   //Envoie de l'avis.
-  const submitAvis = (e) => {
+  const submitAvis = async (e) => {
     e.preventDefault();
-    postAvis(avis);
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      return;
+    }
+    setIsLoading(true);
+    try {
+      const response = await postAvis(avis);
+      setMessage(response);
+      setShowAlert(true);
+      setAvis({ pseudo: "", commentaire: "", isValid: "0" });
+    } catch (error) {
+      setMessage(error.message);
+      setShowAlert(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -45,8 +77,10 @@ const ModalAvis = ({ handleShowModale }) => {
           name="pseudo"
           className="input-formulaire"
           id="pseudo"
+          value={avis.pseudo}
           onChange={handleAvis}
         />
+        {errors.pseudo && <span>{errors.pseudo}</span>}
 
         <label htmlFor="avis" className="label-formulaire">
           Avis:
@@ -56,13 +90,20 @@ const ModalAvis = ({ handleShowModale }) => {
           name="commentaire"
           id="avis"
           className="textArea-formulaire"
+          value={avis.commentaire}
           onChange={handleAvis}
         ></textarea>
+        {errors.commentaire && <span>{errors.commentaire}</span>}
 
-        <button className="button-formulaire" type="submit">
-          SOUMETTRE
+        <button
+          className="button-formulaire"
+          type="submit"
+          disabled={isLoading}
+        >
+          {isLoading ? "ENVOI..." : "SOUMETTRE"}
         </button>
       </form>
+      {showAlert && <Alert message={message} color={"success"} />}
     </div>
   );
 };

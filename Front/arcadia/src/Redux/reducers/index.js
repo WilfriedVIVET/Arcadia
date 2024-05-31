@@ -10,6 +10,7 @@ import getRaces from "./races.reducer";
 import getAvis from "./avis.reducer";
 import getAvisIsValid from "./avisIsValid.reducer";
 import getRapport from "./rapport.reducer";
+import alert from "./alert.reducer";
 
 export default combineReducers({
   getServices,
@@ -23,4 +24,5 @@ export default combineReducers({
   getAvis,
   getAvisIsValid,
   getRapport,
+  alert,
 });

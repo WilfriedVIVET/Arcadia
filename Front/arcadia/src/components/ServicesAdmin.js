@@ -23,9 +23,6 @@ const ServicesAdmin = () => {
     nom: "",
     description: "",
   });
-  const [index, setIndex] = useState({
-    index: "",
-  });
 
   //Fonction qui récupére l'index du service cliqué.
   const handleService = (service) => {
@@ -55,17 +52,15 @@ const ServicesAdmin = () => {
   };
 
   //Fonction qui supprime un service.
-  const handleDelete = async (service) => {
-    setIndex((prevData) => ({
-      ...prevData,
-      index: service,
-    }));
-    await deleteService(index);
+  const handleDelete = async (serviceId) => {
+    const indexData = { index: serviceId };
+    await deleteService(indexData);
     dispatch(getServices());
   };
 
   //Fonction qui ajoute un service.
-  const handleCreate = async () => {
+  const handleCreate = async (e) => {
+    e.preventDefault();
     await createService(serviceUpdate);
     dispatch(getServices());
   };

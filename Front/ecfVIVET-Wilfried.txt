@@ -1,5 +1,7 @@
-Pour se connecter:
 
+lien GITHUB: https://github.com/WilfriedVIVET/Arcadia
+
+lien Trello: https://trello.com/b/J6iDE3dd/arcadia
 
 username = joseArcadia@hotmail.fr
 password = joseadminarcadia

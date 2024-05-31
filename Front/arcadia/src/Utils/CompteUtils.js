@@ -4,10 +4,10 @@ import axios from "axios";
 export const postNewCompte = async (newUser) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postAccount.php",
+      "http://localhost/API_ARCADIA/Post/postAccount.php",
       JSON.stringify(newUser)
     );
-    alert(response.data.message);
+    return response.data.message;
   } catch (error) {
     alert(error);
     throw error;
@@ -21,7 +21,6 @@ export const getRole = async (account) => {
       "http://localhost/API_ARCADIA/getRole.php",
       JSON.stringify(account)
     );
-
     return response.data.role;
   } catch (error) {
     alert(error);
@@ -33,7 +32,7 @@ export const getRole = async (account) => {
 export const updateUser = async (account) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/updateUser.php",
+      "http://localhost/API_ARCADIA/Update/updateUser.php",
       JSON.stringify(account)
     );
     alert(response.data.message);
@@ -47,7 +46,7 @@ export const updateUser = async (account) => {
 export const deleteUser = async (account) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/deleteUser.php",
+      "http://localhost/API_ARCADIA/Delete/deleteUser.php",
       JSON.stringify(account)
     );
     alert(response.data.message);

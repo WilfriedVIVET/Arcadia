@@ -121,10 +121,7 @@ const InfoAnimaux = () => {
   //Envoie du rapport.
   const submitRapport = (e) => {
     e.preventDefault();
-
-    console.log("postEmploye ", infoAnimal);
     postInfoRapport(infoAnimal);
-
     resetForm();
     setSelectedAnimal(null);
   };
@@ -160,14 +157,14 @@ const InfoAnimaux = () => {
           )}
           <div className="bloc-info">
             <span>Prénom:</span>
-            <span className="span-formulaire">
+            <span className="input-formulaire">
               {!isEmpty(selectedAnimal) &&
                 animals[selectedAnimal.indexAnimal].prenom}
             </span>
           </div>
           <div className="bloc-info">
             <span>Race:</span>
-            <span className="span-formulaire">
+            <span className="input-formulaire">
               {!isEmpty(selectedAnimal) &&
                 animals[selectedAnimal.indexAnimal].label}
             </span>
@@ -180,9 +177,10 @@ const InfoAnimaux = () => {
                 name="etat"
                 onChange={handleInfoAnimal}
                 value={infoAnimal.etat}
+                className="input-formulaire"
               />
             ) : (
-              <span className="span-formulaire">{infoAnimal.etat}</span>
+              <span className="input-formulaire">{infoAnimal.etat}</span>
             )}
           </div>
           <div className="bloc-info">
@@ -193,9 +191,10 @@ const InfoAnimaux = () => {
                 name="detail"
                 onChange={handleInfoAnimal}
                 value={infoAnimal.detail}
+                className="input-formulaire"
               />
             ) : (
-              <span className="span-formulaire">{infoAnimal.detail}</span>
+              <span className="input-formulaire">{infoAnimal.detail}</span>
             )}
           </div>
           <div className="bloc-info">
@@ -206,9 +205,12 @@ const InfoAnimaux = () => {
                 name="nrtconseille"
                 onChange={handleInfoAnimal}
                 value={infoAnimal.nrtconseille}
+                className="input-formulaire"
               />
             ) : (
-              <span className="span-formulaire">{infoAnimal.nrtconseille}</span>
+              <span className="input-formulaire">
+                {infoAnimal.nrtconseille}
+              </span>
             )}
           </div>
           <div className="bloc-info">
@@ -219,9 +221,10 @@ const InfoAnimaux = () => {
                 name="nourriture"
                 onChange={handleInfoAnimal}
                 value={infoAnimal.nourriture}
+                className="input-formulaire"
               />
             ) : (
-              <span className="span-formulaire">{infoAnimal.nourriture}</span>
+              <span className="input-formulaire">{infoAnimal.nourriture}</span>
             )}
           </div>
           <div className="bloc-info">
@@ -232,9 +235,10 @@ const InfoAnimaux = () => {
                 name="qtconseille"
                 onChange={handleInfoAnimal}
                 value={infoAnimal.qtconseille}
+                className="input-formulaire"
               />
             ) : (
-              <span className="span-formulaire">{infoAnimal.qtconseille}</span>
+              <span className="input-formulaire">{infoAnimal.qtconseille}</span>
             )}
           </div>
           <div className="bloc-info">
@@ -245,9 +249,10 @@ const InfoAnimaux = () => {
                 name="grammage"
                 onChange={handleInfoAnimal}
                 value={infoAnimal.grammage}
+                className="input-formulaire"
               />
             ) : (
-              <span className="span-formulaire">{infoAnimal.grammage}</span>
+              <span className="input-formulaire">{infoAnimal.grammage}</span>
             )}
           </div>
           <button className="button-formulaire" type="submit">

@@ -4,10 +4,10 @@ import axios from "axios";
 export const postInfoRapport = async (newInfoAnimal) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postInfoRapport.php",
+      "http://localhost/API_ARCADIA/Post/postInfoRapport.php",
       JSON.stringify(newInfoAnimal)
     );
-    alert(response.data.message);
+    return response.data.message;
   } catch (error) {
     alert(error.message);
     throw error;
@@ -18,10 +18,10 @@ export const postInfoRapport = async (newInfoAnimal) => {
 export const postAnimal = async (newAnimal) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postAnimal.php",
+      "http://localhost/API_ARCADIA/Post/postAnimal.php",
       JSON.stringify(newAnimal)
     );
-    alert(response.data.message);
+    return response.data.message;
   } catch (error) {
     alert(error.message);
     throw error;
@@ -32,7 +32,7 @@ export const postAnimal = async (newAnimal) => {
 export const deleteRace = async (idRace) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/deleteRace.php",
+      "http://localhost/API_ARCADIA/Delete/deleteRace.php",
       JSON.stringify(idRace)
     );
     alert(response.data.message);
@@ -46,7 +46,7 @@ export const deleteRace = async (idRace) => {
 export const postNewRace = async (label) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/postRace.php",
+      "http://localhost/API_ARCADIA/Post/postRace.php",
       JSON.stringify(label)
     );
     alert(response.data.message);
@@ -60,7 +60,7 @@ export const postNewRace = async (label) => {
 export const deleteAnimal = async (id) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/deleteAnimal.php",
+      "http://localhost/API_ARCADIA/Delete/deleteAnimal.php",
       JSON.stringify(id)
     );
     alert(response.data.message);
