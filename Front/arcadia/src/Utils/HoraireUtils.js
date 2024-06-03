@@ -1,10 +1,11 @@
 import axios from "axios";
+const API = process.env.API_CONNECT || "http://localhost/API_ARCADIA";
 
 //Modification horaire.
 export const postHoraire = async (newHoraire) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/Post/postHoraire.php",
+      API + "/Post/postHoraire.php",
       JSON.stringify(newHoraire)
     );
     return response.data.message;

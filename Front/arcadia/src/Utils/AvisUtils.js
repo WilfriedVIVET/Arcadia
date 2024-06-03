@@ -1,10 +1,11 @@
 import axios from "axios";
+const API = process.env.API_CONNECT || "http://localhost/API_ARCADIA";
 
 // Post d'un avis.
 export const postAvis = async (avis) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/Post/postAvis.php",
+      API + "/Post/postAvis.php",
       JSON.stringify(avis)
     );
 
@@ -19,7 +20,7 @@ export const postAvis = async (avis) => {
 export const deleteAvis = async (avis) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/Delete/deleteAvis.php",
+      API + "/Delete/deleteAvis.php",
       JSON.stringify(avis)
     );
     return response.data.message;
@@ -33,7 +34,7 @@ export const deleteAvis = async (avis) => {
 export const postValidAvis = async (avis) => {
   try {
     const response = await axios.post(
-      "http://localhost/API_ARCADIA/Post/postValidAvis.php",
+      API + "/Post/postValidAvis.php",
       JSON.stringify(avis)
     );
     alert(response.data.message);
