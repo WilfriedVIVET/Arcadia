@@ -1,11 +1,10 @@
 import axios from "axios";
-const API = process.env.API_CONNECT || "http://localhost/API_ARCADIA";
 
 //Update d'un service.
 export const updateService = async (serviceUpdated) => {
   try {
     const response = await axios.post(
-      API + "/Update/updateService.php",
+      process.env.REACT_APP_API + "/Update/updateService.php",
       JSON.stringify(serviceUpdated)
     );
     return response.data.message;
@@ -19,7 +18,7 @@ export const updateService = async (serviceUpdated) => {
 export const deleteService = async (serviceDelete) => {
   try {
     const response = await axios.post(
-      API + "/Delete/deleteService.php",
+      process.env.REACT_APP_API + "/Delete/deleteService.php",
       JSON.stringify(serviceDelete)
     );
     return response.data.message;
@@ -33,7 +32,7 @@ export const deleteService = async (serviceDelete) => {
 export const createService = async (newService) => {
   try {
     const response = await axios.post(
-      API + "/Create/createService.php",
+      process.env.REACT_APP_API + "/Create/createService.php",
       JSON.stringify(newService)
     );
     alert(response.data.message);

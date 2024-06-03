@@ -1,11 +1,10 @@
 import axios from "axios";
-const API = process.env.API_CONNECT || "http://localhost/API_ARCADIA";
 
 //Création rapport.
 export const postInfoRapport = async (newInfoAnimal) => {
   try {
     const response = await axios.post(
-      API + "/Post/postInfoRapport.php",
+      process.env.REACT_APP_API + "/Post/postInfoRapport.php",
       JSON.stringify(newInfoAnimal)
     );
     return response.data.message;
@@ -19,7 +18,7 @@ export const postInfoRapport = async (newInfoAnimal) => {
 export const postAnimal = async (newAnimal) => {
   try {
     const response = await axios.post(
-      API + "/Post/postAnimal.php",
+      process.env.REACT_APP_API + "/Post/postAnimal.php",
       JSON.stringify(newAnimal)
     );
     return response.data.message;
@@ -33,7 +32,7 @@ export const postAnimal = async (newAnimal) => {
 export const deleteRace = async (idRace) => {
   try {
     const response = await axios.post(
-      API + "/Delete/deleteRace.php",
+      process.env.REACT_APP_API + "/Delete/deleteRace.php",
       JSON.stringify(idRace)
     );
     alert(response.data.message);
@@ -47,7 +46,7 @@ export const deleteRace = async (idRace) => {
 export const postNewRace = async (label) => {
   try {
     const response = await axios.post(
-      API + "/Post/postRace.php",
+      process.env.REACT_APP_API + "/Post/postRace.php",
       JSON.stringify(label)
     );
     alert(response.data.message);
@@ -61,7 +60,7 @@ export const postNewRace = async (label) => {
 export const deleteAnimal = async (id) => {
   try {
     const response = await axios.post(
-      API + "/Delete/deleteAnimal.php",
+      process.env.REACT_APP_API + "/Delete/deleteAnimal.php",
       JSON.stringify(id)
     );
     alert(response.data.message);

@@ -1,11 +1,10 @@
 import axios from "axios";
-const API = process.env.API_CONNECT || "http://localhost/API_ARCADIA";
 
 //Modification etat habitat.
 export const postEtatHabitat = async (newEtat) => {
   try {
     const response = await axios.post(
-      API + "/Post/postEtat.php",
+      process.env.REACT_APP_API + "/Post/postEtat.php",
       JSON.stringify(newEtat)
     );
     return response.data.message;
@@ -19,7 +18,7 @@ export const postEtatHabitat = async (newEtat) => {
 export const postHabitat = async (newHabitat) => {
   try {
     const response = await axios.post(
-      API + "/Post/postHabitat.php",
+      process.env.REACT_APP_API + "/Post/postHabitat.php",
       JSON.stringify(newHabitat)
     );
     return response.data.message;
@@ -33,7 +32,7 @@ export const postHabitat = async (newHabitat) => {
 export const deleteHabitat = async (habitat) => {
   try {
     const response = await axios.post(
-      API + "/Delete/deleteHabitat.php",
+      process.env.REACT_APP_API + "/Delete/deleteHabitat.php",
       JSON.stringify(habitat)
     );
     alert(JSON.stringify(response.data));
