@@ -1,0 +1,67 @@
+.body-services {
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh;
+    height: auto;
+    background-color: $herbe;
+    width: 100vw;
+    align-items: center;
+    padding-top: 30px;
+  
+    
+    >.header-service{
+      height: 500px;
+      width: 100%;
+      background-image: url("../../assets/deco/service.jpg");
+      background-position: center;
+      background-attachment: fixed;
+      background-size:cover;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+      >span{
+          font-size: 2.5em;
+          color: $text;
+          text-shadow: $textShadow;
+          width: auto;
+          margin-left: 20px;
+      } 
+  }
+  
+    > .service-service {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 200px;
+      height: auto;
+      width: 100%;
+      margin-bottom: 50px;
+      gap: 50px;
+      
+    }
+  }
+  
+  .container-formulaire {
+    > .header-formulaire {
+      > .title-service {
+        text-transform: uppercase;
+      }
+    }
+  
+    > p {
+      height: auto;
+      width: 90%;
+      margin: auto;
+      font-size: 1.3em;
+      color: $text;
+    }
+  }
+  
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 1500px) {
+    .body-services > .service-service {
+      flex-direction: row; 
+    }
+  }

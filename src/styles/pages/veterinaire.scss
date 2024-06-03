@@ -1,0 +1,36 @@
+
+.body-veterinaire{
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    background-color: $herbe;
+
+    >.header-veterinaire{
+        height: 500px;
+        width: 100%;
+        background-image: url("../../assets/deco/veterinaire.png");
+        background-position: center;
+        background-attachment: fixed;
+        background-size:cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+    }     
+}
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 1500px) {
+
+    .body-veterinaire >.container-veterinaire{
+       
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 80px;
+        margin-bottom: 0;
+        align-items: flex-start;
+        width: 90%;
+        margin: auto;
+    } 
+
+}

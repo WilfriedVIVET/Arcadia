@@ -1,0 +1,50 @@
+
+.services-admin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding-top: 20px;
+  
+  >.service-admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 95%;
+    padding: 10px;
+    color: $text;
+   
+
+    >.input-nomService{
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: $herbe;
+      color: $text;
+      height: 50px;
+      padding: 5px;
+      width: 95%;
+      border: none;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+    }
+    
+    >.textArea-descriptionService{
+      height: 80px;
+      width: 95%;
+      background-color: $herbe;
+      color: $text;
+      padding: 5px;
+      resize: none;
+      border: none;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+  }
+}
+
+.service-admin:hover{
+  cursor: pointer;
+}
+

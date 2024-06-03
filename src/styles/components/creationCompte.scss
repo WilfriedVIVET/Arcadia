@@ -1,0 +1,29 @@
+
+.container-tableau{
+    height: auto;
+    min-height: 200px;
+    background-color: $herbe;
+    width: 90%;
+    margin: 20px;
+    
+ 
+}
+
+.formulaire{
+  
+    .formulaire-radio{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 50px;
+        width: 100%;
+        color: $text;
+    }      
+    
+    .input-radio{   
+        height: 20px;
+        width: 20px;
+    }
+    
+}
+ 

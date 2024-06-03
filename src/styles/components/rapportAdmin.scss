@@ -1,0 +1,25 @@
+
+.container-rapport{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-height: 200px;
+    height: auto;
+    width: 90%;
+    //max-width:600px ;
+    background-color: $feuille;
+    box-shadow: $boxShadow;
+    border-radius: 25px;
+    margin: 20px 0px;
+   
+  }
+
+
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 1500px) {
+   
+ .container-rapport{
+    width: 98%;  
+  }
+        
+}

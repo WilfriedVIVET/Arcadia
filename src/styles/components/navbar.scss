@@ -1,0 +1,129 @@
+
+
+.navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px; 
+    display: flex;
+    justify-content: space-between;
+    background-color: $feuille;
+    width: 100%;
+    align-items: center;
+    box-shadow: $boxShadow;
+    z-index: 2;
+   
+    >.title-logo{
+        margin-left: 30px;
+        height: 100%;
+        width: 220px;
+        display: flex;
+        align-items: center;
+        font-size: 2.2em;
+        font-weight: bold;
+    }
+    
+   >.nav-link{
+       position: fixed;
+       top: 0px;
+       left: 0;
+       height: 100%; 
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       background-color:$feuille;
+       margin-left: -100%;
+       transition: all 0.5s ease;
+       border-bottom-right-radius: 50px;
+    }
+    
+    >.mobile-menu {
+        margin-left: 0;
+        border-bottom-right-radius: 50px;
+        box-shadow: $boxShadow;
+        background-color: $trait; 
+    }
+    >.nav-link ul{
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        height: 80%;   
+       
+    }    
+    
+    >.nav-link ul li{
+        margin: auto;  
+        font-size: 1.5em;
+        font-weight: bold;
+        height: auto;
+        
+
+    }   
+    
+    .div-burger{
+        height: 55px;
+        width: 55px;
+        position: fixed;
+        top: 5px;
+        left: calc(100vw - 80px);
+        background-color: $feuille;
+        display: flex;
+        justify-content: center;
+        border-radius: 5px;
+        
+        >img{
+            margin: auto;  
+            height: 45px;
+            width: 45px;               
+        }
+    }
+    
+    a{
+      color: $feuille;
+    }
+    
+    .nav-active{
+        text-decoration: underline;
+        text-decoration-color: $feuille;
+        text-underline-offset: 10px; 
+        text-decoration-thickness:5px; 
+        text-decoration-style:solid;    
+    }
+    
+    .burger:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+    
+   .li-navbar:hover{
+        transform: scale(1.1);
+       
+    }
+}
+
+ .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    border-radius: 25px;
+    box-shadow: $boxShadow;
+    background-color: #914c02;
+}
+
+
+
+.logo > img {
+    //margin-bottom: 5px;
+    height: 85%;
+    width: 90%;
+    border-radius: 25px;
+    border: 4px solid #ec7c03;
+    border-top: 6px solid #e3770386 ;
+  
+}

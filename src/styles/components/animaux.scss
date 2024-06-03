@@ -1,0 +1,27 @@
+.container-formulaire{
+         
+    >.formulaire{
+
+        >.deposer{
+            display: flex;
+            height: 200px;
+            width: 250px;
+            display: flex;
+            background-color: $herbe;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            border: dashed 4px $text;
+            color: $text;
+            
+            >img{
+                height: 100%;
+                width: 100%;
+            }   
+        }
+    }
+}
+
+.css-b62m3t-container{
+        width: 90%;
+}

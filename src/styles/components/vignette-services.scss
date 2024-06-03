@@ -1,0 +1,52 @@
+
+.service{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    align-items: center;
+    background-color: $feuille;
+    border-radius: 25px;
+    box-shadow: $boxShadow;
+
+        >.title-service{
+            display: flex;
+            height: 80px;
+            width: 100%;
+            background-color: $terre;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            justify-content: center;
+            align-items: center;
+            
+            >.title{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 90%;
+                font-weight: bold;
+                font-size: 1.2em;
+                color: $feuille;
+                text-transform: uppercase;
+                text-align-last: center;
+                   
+            }
+        }
+   
+    >p{
+        display: flex;
+        color: $text;
+        font-size: 1.5em;
+        height: 80%;
+        align-items: center; 
+        width: 90%;
+       
+    }
+
+} 
+
+.service:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+

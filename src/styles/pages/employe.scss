@@ -1,0 +1,49 @@
+.body-employe{
+    min-height: 110vh;
+    height: auto;
+    width: 100vw;
+    background-color: $herbe;
+    
+
+    >.header-veterinaire{
+        height: 500px;
+        width: 100%;
+        background-image: url("../../assets/deco/employe.png");
+        background-position: center;
+        background-attachment: fixed;
+        background-size:cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+    }  
+    
+    >.container-employe{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        min-height: 200px;
+        height: auto;
+        width: 100%;
+        gap: 50px;
+        align-items: center;
+       
+        
+    } 
+    
+}
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 1500px) {
+    
+    .body-employe >.container-employe{
+        
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin-bottom: 0px;
+        padding-bottom: 80px ;
+        
+    } 
+
+}

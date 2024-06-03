@@ -1,0 +1,222 @@
+
+.accueil{
+    height: auto;
+    width: 100vw;
+
+    >.header-accueil{
+        height: 500px;
+        width: 100%;
+        background-image: url("../../assets/deco/fond-header.jpg");
+        background-position: center;
+        background-attachment: fixed;
+        background-size:cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+        >span{
+            font-size: 2.5em;
+            color: $text;
+            text-shadow: $textShadow;
+            width: auto;
+            margin-left: 20px;
+        } 
+    }
+}
+
+.container-rubrique{
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   
+}
+
+.title{
+    color: $terre;
+    font-size: 2em;
+}
+
+
+.description{
+    color: $text;
+    height: auto;
+    width: 90%;
+    margin: auto;
+    font-size: 1.4em;
+}
+
+.span-logo{
+    color: $terre;
+    text-shadow: 0px 2px 2px rgb(255, 237, 34);
+}
+
+.header-contenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 250px;
+    width: 100%;
+    
+}
+
+.container-habitat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    min-height: 500px;
+    width: 100%;
+    justify-content: space-around;
+    background-color: $herbe;
+    
+   
+
+}
+    .flex-habitat{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100vw;
+        
+    }
+
+.herbe{
+    background-color: $herbe;
+}
+
+.feuille{
+    background-color: $feuille;
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 1200px;
+    background-image: url("../../assets/deco/TroisSinges.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.carrousel{
+    height: 250px;
+    width: 90%;
+    background-color: $feuille;
+    border: 2px solid $terre;
+    color: $text;
+    font-size: 1.2em;
+    font-weight: bold;
+
+    >slick-slider slick-initialized{
+        height: 10px;
+    }
+
+}
+
+.button-accueil-avis{
+    height: 50px;
+    width: 200px;
+    background-color: $feuille;
+    color: $text;
+    border: 2px solid $terre;
+    border-radius: 25px;
+    box-shadow: $boxShadowButton;
+    font-size: 1.2em;
+}
+
+.animaux{
+    display: flex;
+    height: 500px;
+    width: 100%;
+
+    >ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 90%;
+        width: 100%;
+        align-items: center;
+        
+        >li{
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $text;
+            text-decoration: dotted;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.carrousel{
+    border-radius: 25px;
+    width: 100%;
+}
+
+.slick-list{
+    height: 130px;
+    padding: 10px;
+}
+
+.horaire{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $terre;
+    margin-bottom: 80px;
+    border-radius: 25px;
+
+    >.bloc-horaire{
+        height: auto;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+
+
+        >span{
+            font-size: 1.2em;
+            color: $text;
+        }
+    }
+}
+
+
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 1500px) {
+
+    .title{
+        font-size: 5em;
+    }
+
+    .container-bloc >.header-contenu >span{
+        font-size: 5em;
+    }
+
+    .flex-habitat {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .services{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .animaux>ul>li{
+        font-size: 2em;
+        
+    }
+
+    .horaire>.bloc-horaire>span{
+        font-size: 2.2em;
+    }
+}
