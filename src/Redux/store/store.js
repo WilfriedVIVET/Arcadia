@@ -4,7 +4,7 @@ import rootReducer from "../reducers";
 //Penser à mettre devtools à false avant prod.
 const store = configureStore({
   reducer: rootReducer,
-  devTools: false,
+  devTools: true,
 });
 
 export default store;
