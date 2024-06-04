@@ -80,7 +80,7 @@ const Connexion = () => {
             <input
               type="text"
               name="email"
-              className="input-formulaire"
+              className="input-formulaire no-capitalize"
               id="email"
               onChange={handleUser}
               autoComplete="email"

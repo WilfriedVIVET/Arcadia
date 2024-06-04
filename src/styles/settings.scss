@@ -202,3 +202,7 @@ body {
   border: 4px solid black;
   background-color: $trait;
 }
+
+.no-capitalize {
+  text-transform: lowercase;
+}
