@@ -15,8 +15,7 @@ const VignetteHabitatComplet = ({ habitat }) => {
   }, [dispatch]);
 
   const [isLoading, setIsLoading] = useState(true);
-  const [index, setIndex] = useState("");
-  const [image, setImage] = useState();
+  const [imagePath, setImagePath] = useState("");
   const [selectedAnimal, setSelectedAnimal] = useState({});
   const [showInfo, setShowInfo] = useState(false);
   const [animals, setAnimals] = useState([]);
@@ -52,8 +51,7 @@ const VignetteHabitatComplet = ({ habitat }) => {
   //Remplissage info animal dans vignette.
   const handleInfo = (animal) => {
     setSelectedAnimal(animal);
-    setIndex(animal.animal_id);
-    searchImage(index);
+    setImagePath(animal.image_path);
   };
 
   // Mise à jour de l'image lorsque selectedAnimal change.
@@ -62,17 +60,18 @@ const VignetteHabitatComplet = ({ habitat }) => {
       const animal = animaux.find(
         (animal) => animal.animal_id === selectedAnimal.animal_id
       );
-      setImage(animal);
+      if (animal) {
+        const baseURL = process.env.REACT_APP_IMAGE_URL;
+        const imageURL = `${baseURL}${animal.image_path.replace(
+          /^.*[\\/]/,
+          ""
+        )}`;
+        setImagePath(imageURL);
+      }
     }
   }, [selectedAnimal, animaux]);
 
-  // Récupération de l'image de l'animal via son index.
-  const searchImage = (animalId) => {
-    const animal = animaux.find((animal) => animal.animal_id === animalId);
-    setImage(animal);
-  };
-
-  //déploiement de la fenetre info.
+  //déploiement de la fenêtre info.
   const toggleInfo = () => {
     setShowInfo(!showInfo);
   };
@@ -115,10 +114,8 @@ const VignetteHabitatComplet = ({ habitat }) => {
           <div className="info-animal" onClick={showPortrait}>
             <img
               className={portrait ? " grand-portrait" : "petit-portrait"}
-              src={
-                image ? `data:image/jpg;base64,${image.image_data}` : "logo.png"
-              }
-              alt={image ? image.prenom : "logo arcadia"}
+              src={imagePath || "logo.png"}
+              alt={selectedAnimal ? selectedAnimal.prenom : "logo arcadia"}
             />
 
             <div className="info-info">

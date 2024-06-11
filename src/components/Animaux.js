@@ -36,6 +36,19 @@ const Animaux = () => {
     animal_id: "",
   });
 
+  //Reset du formulaire.
+  const resetForm = () => {
+    setDroppedImage(null);
+    setSelectedRace("");
+    setSelectedHabitat("");
+    setNewAnimal({
+      prenom: "",
+      race: "",
+      habitat: "",
+      image_data: "",
+    });
+  };
+
   useEffect(() => {
     setAnimalIdSelected((prevData) => ({
       ...prevData,
@@ -115,15 +128,16 @@ const Animaux = () => {
   useEffect(() => {
     setNewAnimal((prevData) => ({
       ...prevData,
-      image_data: droppedImage,
+      image_data: droppedImage ? droppedImage : "",
     }));
   }, [droppedImage]);
 
   //Création de l animal.
   const submitAnimal = async (e) => {
     e.preventDefault();
-    postAnimal(newAnimal);
+    await postAnimal(newAnimal);
     dispatch(getAnimaux);
+    resetForm();
   };
 
   //Suppression de l'animal
@@ -175,6 +189,7 @@ const Animaux = () => {
           type="text"
           name="prenom"
           id="prenom"
+          value={newAnimal.prenom}
           className="input-formulaire"
           onChange={handleInfo}
         />
@@ -198,6 +213,7 @@ const Animaux = () => {
           onChange={(selectedOption) => setSelectedHabitat(selectedOption)}
           inputId="habitat"
         />
+
         <div className="deposer">
           {droppedImage ? (
             <img

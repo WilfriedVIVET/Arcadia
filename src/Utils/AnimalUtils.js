@@ -7,7 +7,7 @@ export const postInfoRapport = async (newInfoAnimal) => {
       process.env.REACT_APP_API + "/Post/postInfoRapport.php",
       JSON.stringify(newInfoAnimal)
     );
-    return response.data.message;
+    alert(response.data.message);
   } catch (error) {
     alert(error.message);
     throw error;
@@ -21,7 +21,7 @@ export const postAnimal = async (newAnimal) => {
       process.env.REACT_APP_API + "/Post/postAnimal.php",
       JSON.stringify(newAnimal)
     );
-    return response.data.message;
+    alert(response.data.message);
   } catch (error) {
     alert(error.message);
     throw error;

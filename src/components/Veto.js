@@ -4,7 +4,6 @@ import { getHabitats } from "../Redux/actions/habitats.action";
 import { useDispatch, useSelector } from "react-redux";
 import { getInfoAnimal } from "../Redux/actions/infoAnimal.action";
 import { postEtatHabitat } from "../Utils/HabitatUtils";
-import InfoAnimaux from "./InfoAnimaux";
 
 const Veto = () => {
   const dispatch = useDispatch();
@@ -68,7 +67,6 @@ const Veto = () => {
             ))}
         </div>
       </div>
-      <InfoAnimaux />
     </>
   );
 };

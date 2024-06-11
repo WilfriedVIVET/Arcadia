@@ -1,68 +1,241 @@
-
-.tableau-admin{
+.tableau-admin {
     display: flex;
     flex-direction: column;
     height: auto;
-    max-width: 90%;
+    width: 100%;
     margin: 20px 0px;
     background-color: $herbe;
     border-collapse: collapse;
     overflow-x: scroll;
     color: $text;
+    font-size: 0.8em;
 }
 
-thead{
+thead {
     display: flex;
     align-items: center;
     height: 50px;
-    width: auto;
-}
-  
-th{
-    display: flex;
-    height: 50px;
-    width: 190px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid $feuille;
-    border-collapse: collapse;
-    text-decoration: underline;
+    width: 100%;
+    font-size: 1.5em;
+
+    >tr {
+        display: flex;
+        height: auto;
+        width: 100%;
+
+        >th {
+            display: flex;
+            height: 50px;
+            width: 33%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $feuille;
+            border-collapse: collapse;
+            color: $terre ;
+
+        }
+    }
 }
 
-
-tbody{
-    width: auto;
+tbody {
+    width: 100%;
     display: flex;
     flex-direction: column;
+
+    >tr {
+        display: flex;
+        width: 100%;
+
+        >td {
+            align-items: center;
+            height: 50px;
+            width: 33%;
+            display: flex;
+            justify-content: center;
+            border: 1px solid $feuille;
+
+            >input {
+                text-align: center;
+                background-color: $herbe;
+                border: none;
+                color: $text;
+                font-size: 1.2em;
+                width: 100%;
+
+            }
+        }
+    }
 }
 
-tr{
-    display: flex;
-    width: auto;
-   
-}    
-
-td{
-    align-items: center;
-    height: 50px;
-    min-width: 190px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid $feuille;
-
-    >input{
-        text-align: center;
-        background-color: $herbe;
-        border: none;
-        color: $text;
-        font-size: 1.2em;
-        width: 50%;
-        
-    }
-}    
-
-th:hover{
+th:hover {
     cursor: pointer;
 }
 
-   
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 600px) {
+    .tableau-admin {
+        font-size: 1.8em;
+    }
+}
+
+/*********************************************************************/
+
+.tableau-rapport {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    margin: 20px 0px;
+    background-color: $herbe;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    color: $text;
+    font-size: 0.8em;
+
+    >thead {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        font-size: 1em;
+
+        >tr {
+            display: flex;
+            height: auto;
+            width: 100%;
+
+            >th {
+                display: flex;
+                height: 50px;
+                min-width: 100px;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $feuille;
+                border-collapse: collapse;
+                color: $terre ;
+            }
+        }
+    }
+
+    >tbody {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        >tr {
+            display: flex;
+            width: 100%;
+
+            >td {
+                align-items: center;
+                height: 80px;
+                min-width: 100px;
+                display: flex;
+                justify-content: center;
+                border: 1px solid $feuille;
+
+                >input {
+                    text-align: center;
+                    background-color: $herbe;
+                    border: none;
+                    color: $text;
+                    font-size: 1.2em;
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+}
+
+th:hover {
+    cursor: pointer;
+}
+
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 1500px) {
+    .tableau-rapport {
+        font-size: 1.8em;
+    }
+}
+
+/***********************************************************************************/
+.tableau-consultation {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    margin: 20px 0px;
+    background-color: $herbe;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    color: $text;
+    font-size: 0.8em;
+}
+
+thead {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    font-size: 1.5em;
+
+    >tr {
+        display: flex;
+        height: auto;
+        width: 100%;
+
+        >th {
+            display: flex;
+            height: 50px;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $feuille;
+            border-collapse: collapse;
+            color: $terre ;
+
+        }
+    }
+}
+
+tbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    >tr {
+        display: flex;
+        width: 100%;
+
+        >td {
+            align-items: center;
+            height: 50px;
+            width: 33%;
+            display: flex;
+            justify-content: center;
+            border: 1px solid $feuille;
+
+            >input {
+                text-align: center;
+                background-color: $herbe;
+                border: none;
+                color: $text;
+                font-size: 1.2em;
+                width: 100%;
+
+            }
+        }
+    }
+}
+
+th:hover {
+    cursor: pointer;
+}
+
+/************************************MEDIA QUERIES******************************************/
+@media screen and (min-width: 600px) {
+    .tableau-admin {
+        font-size: 1.8em;
+    }
+}

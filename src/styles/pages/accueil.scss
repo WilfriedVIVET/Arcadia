@@ -1,45 +1,44 @@
-
-.accueil{
+.accueil {
     height: auto;
     width: 100vw;
 
-    >.header-accueil{
+    >.header-accueil {
         height: 500px;
         width: 100%;
         background-image: url("../../assets/deco/fond-header.jpg");
         background-position: center;
         background-attachment: fixed;
-        background-size:cover;
+        background-size: cover;
         background-repeat: no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
-      
-        >span{
+
+        >span {
             font-size: 2.5em;
             color: $text;
             text-shadow: $textShadow;
             width: auto;
             margin-left: 20px;
-        } 
+        }
     }
 }
 
-.container-rubrique{
-    height: 800px;
+.container-rubrique {
+    min-height: 800px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-   
 }
 
-.title{
+.title {
     color: $terre;
     font-size: 2em;
+    font-weight: bold;
 }
 
-
-.description{
+.description {
     color: $text;
     height: auto;
     width: 90%;
@@ -47,22 +46,21 @@
     font-size: 1.4em;
 }
 
-.span-logo{
+.span-logo {
     color: $terre;
     text-shadow: 0px 2px 2px rgb(255, 237, 34);
 }
 
-.header-contenu{
+.header-contenu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     height: 250px;
     width: 100%;
-    
 }
 
-.container-habitat{
+.container-habitat {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,40 +69,41 @@
     width: 100%;
     justify-content: space-around;
     background-color: $herbe;
-    
-   
 
 }
-    .flex-habitat{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        width: 100vw;
-        
-    }
 
-.herbe{
+.flex-habitat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100vw;
+
+}
+
+.herbe {
     background-color: $herbe;
 }
 
-.feuille{
+.feuille {
     background-color: $feuille;
 }
 
-.services{
+.services {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 1200px;
+    min-height: 1200px;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
     background-image: url("../../assets/deco/TroisSinges.jpg");
     background-size: cover;
     background-position: center;
 }
 
-
-.carrousel{
+.carrousel {
     height: 250px;
     width: 90%;
     background-color: $feuille;
@@ -112,14 +111,10 @@
     color: $text;
     font-size: 1.2em;
     font-weight: bold;
-
-    >slick-slider slick-initialized{
-        height: 10px;
-    }
-
 }
 
-.button-accueil-avis{
+
+.button-accueil-avis {
     height: 50px;
     width: 200px;
     background-color: $feuille;
@@ -130,20 +125,20 @@
     font-size: 1.2em;
 }
 
-.animaux{
+.animaux {
     display: flex;
     height: 500px;
     width: 100%;
 
-    >ul{
+    >ul {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         height: 90%;
         width: 100%;
         align-items: center;
-        
-        >li{
+
+        >li {
             font-weight: bold;
             text-transform: uppercase;
             color: $text;
@@ -153,17 +148,27 @@
     }
 }
 
-.carrousel{
+.slick-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.slick-slide .li-avis {
+    text-align: center;
+    width: 90%;
+}
+
+.carrousel {
     border-radius: 25px;
     width: 100%;
 }
 
-.slick-list{
+.slick-list {
     height: 130px;
     padding: 10px;
 }
 
-.horaire{
+.horaire {
     display: flex;
     flex-direction: column;
     height: 300px;
@@ -174,14 +179,14 @@
     margin-bottom: 80px;
     border-radius: 25px;
 
-    >.bloc-horaire{
+    >.bloc-horaire {
         height: auto;
         width: 90%;
         display: flex;
         justify-content: space-between;
 
 
-        >span{
+        >span {
             font-size: 1.2em;
             color: $text;
         }
@@ -192,11 +197,15 @@
 /************************************MEDIA QUERIES******************************************/
 @media screen and (min-width: 1500px) {
 
-    .title{
+    .accueil>.header-accueil>span {
         font-size: 5em;
     }
 
-    .container-bloc >.header-contenu >span{
+    .title {
+        font-size: 5em;
+    }
+
+    .container-bloc>.header-contenu>span {
         font-size: 5em;
     }
 
@@ -206,17 +215,17 @@
         justify-content: space-around;
     }
 
-    .services{
+    .services {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    .animaux>ul>li{
+    .animaux>ul>li {
         font-size: 2em;
-        
+
     }
 
-    .horaire>.bloc-horaire>span{
+    .horaire>.bloc-horaire>span {
         font-size: 2.2em;
     }
 }
