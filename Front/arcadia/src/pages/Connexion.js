@@ -66,56 +66,52 @@ const Connexion = () => {
   };
 
   return (
-    <>
-      <div className="body-container">
-        <Navbar />
-        <div className="container-formulaire">
-          <div className="header-formulaire">
-            <span>CONNECTEZ-VOUS:</span>
-          </div>
-          <form onSubmit={submitConnexion} className="formulaire">
-            <label htmlFor="email" className="label-formulaire">
-              Email:
-            </label>
-            <input
-              type="text"
-              name="email"
-              className="input-formulaire"
-              id="email"
-              onChange={handleUser}
-              autoComplete="email"
-              required
-            />
-
-            <label htmlFor="password" className="label-formulaire">
-              Mot de passe:
-            </label>
-            <input
-              type="password"
-              name="password"
-              className="input-formulaire"
-              id="password"
-              onChange={handleUser}
-              autoComplete="current-password"
-              required
-            />
-
-            <button className="button-formulaire" type="submit">
-              Connexion
-            </button>
-          </form>
-          {showAlert && (
-            <Alert
-              message={
-                "Identifiant ou mot de passe incorrect, Veuillez réessayer !"
-              }
-              color={"error"}
-            />
-          )}
+    <div className="body-container">
+      <Navbar />
+      <div className="container-formulaire">
+        <div className="header-formulaire">
+          <span>CONNECTEZ-VOUS:</span>
         </div>
+        <form onSubmit={submitConnexion} className="formulaire">
+          <label htmlFor="email" className="label-formulaire">
+            Email:
+          </label>
+          <input
+            type="text"
+            name="email"
+            className="input-formulaire no-capitalize"
+            id="email"
+            onChange={handleUser}
+            autoComplete="email"
+            required
+          />
+          <label htmlFor="password" className="label-formulaire">
+            Mot de passe:
+          </label>
+          <input
+            type="password"
+            name="password"
+            className="input-formulaire"
+            id="password"
+            onChange={handleUser}
+            autoComplete="current-password"
+            required
+          />
+          <button className="button-formulaire" type="submit">
+            Connexion
+          </button>
+        </form>
+        {showAlert && (
+          <Alert
+            message={
+              "Identifiant ou mot de passe incorrect, Veuillez réessayer !"
+            }
+            color={"error"}
+          />
+        )}
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

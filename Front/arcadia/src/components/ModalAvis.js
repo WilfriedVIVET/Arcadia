@@ -48,7 +48,11 @@ const ModalAvis = ({ handleShowModale }) => {
     }
     setIsLoading(true);
     try {
-      const response = await postAvis(avis);
+      const response = await postAvis({
+        pseudo: escapeHTML(avis.pseudo),
+        commentaire: escapeHTML(avis.commentaire),
+        isValid: avis.isValid,
+      });
       setMessage(response);
       setShowAlert(true);
       setAvis({ pseudo: "", commentaire: "", isValid: "0" });
@@ -58,6 +62,13 @@ const ModalAvis = ({ handleShowModale }) => {
     } finally {
       setIsLoading(false);
     }
+  };
+  // Fonction pour échapper les caractères HTML
+  const escapeHTML = (unsafeText) => {
+    return unsafeText
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
   };
 
   return (

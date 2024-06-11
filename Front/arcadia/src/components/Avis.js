@@ -66,7 +66,9 @@ const Avis = () => {
                   type="checkbox"
                   id={`checkbox-${avisUser.avis_id}`}
                   checked={
-                    avisCheckboxState[avisUser.avis_id] || avisUser.isValid
+                    avisCheckboxState.hasOwnProperty(avisUser.avis_id)
+                      ? avisCheckboxState[avisUser.avis_id]
+                      : avisUser.isValid
                   }
                   onChange={() => handleCheckboxChange(avisUser.avis_id)}
                 />

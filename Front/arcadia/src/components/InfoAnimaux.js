@@ -4,6 +4,7 @@ import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "../Utils/Utils";
 import { getInfoAnimal } from "../Redux/actions/infoAnimal.action";
+
 import { useAppStore } from "../storeZustand";
 
 const InfoAnimaux = () => {
@@ -13,6 +14,12 @@ const InfoAnimaux = () => {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   const [selectedAnimal, setSelectedAnimal] = useState("");
   const animals = useSelector((state) => state.getInfoAnimal);
+
+  const getCurrentDateTime = () => {
+    const now = new Date();
+    return now.toISOString().slice(0, 19).replace("T", " ");
+  };
+
   const [infoAnimal, setInfoAnimal] = useState({
     animal_id: "",
     etat: "",
@@ -21,13 +28,12 @@ const InfoAnimaux = () => {
     grammage: "",
     nrtconseille: "",
     qtconseille: "",
-    date: "",
+    date: getCurrentDateTime(),
+    prenom: "",
   });
 
   useEffect(() => {
-    if (isEmpty(animals)) {
-      dispatch(getInfoAnimal());
-    }
+    if (isEmpty(animals)) dispatch(getInfoAnimal());
   }, [dispatch, animals]);
 
   // Affichage de l'heure
@@ -90,6 +96,7 @@ const InfoAnimaux = () => {
         grammage: animal.grammage || "",
         nrtconseille: animal.nrtconseille || "",
         qtconseille: animal.qtconseille || "",
+        prenom: animal.prenom || "",
       }));
     }
   }, [selectedAnimal, animals]);
@@ -100,7 +107,7 @@ const InfoAnimaux = () => {
     setInfoAnimal((prevData) => ({
       ...prevData,
       [name]: value,
-      date: currentDateTime.toISOString(),
+      date: getCurrentDateTime(),
     }));
   };
 
@@ -115,6 +122,7 @@ const InfoAnimaux = () => {
       date: "",
       nrtconseille: "",
       qtconseille: "",
+      prenom: "",
     });
   };
 
@@ -122,6 +130,7 @@ const InfoAnimaux = () => {
   const submitRapport = (e) => {
     e.preventDefault();
     postInfoRapport(infoAnimal);
+    console.log("info ", infoAnimal);
     resetForm();
     setSelectedAnimal(null);
   };

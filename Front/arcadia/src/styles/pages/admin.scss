@@ -1,22 +1,18 @@
-.container-admin {
-  
-  height: auto;
-  min-height: 100vh;
-  max-width: 100vw;
+.body-container {
 
 
-  .admin {
+  >.admin {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    height: auto;
+    height: 100%;
     background-color: $herbe;
     width: 100%;
-    align-items: center;  
-    padding-bottom: 20px; 
-    padding-top: 100px; 
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 100px;
 
-    > .sous-menu {
+    >.sous-menu {
       display: flex;
       justify-content: center;
       height: 40px;
@@ -24,11 +20,11 @@
       width: 300px;
       border: 4px solid $terre;
       border-radius: 25px;
-      
-      > .css-b62m3t-container {
+
+      >.css-b62m3t-container {
         width: 250px;
-      }    
-    }     
+      }
+    }
   }
 }
 
@@ -42,18 +38,22 @@
 
 /************************************MEDIA QUERIES******************************************/
 @media screen and (min-width: 1500px) {
-  .container-admin {
-    .sous-menu-container {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 50px; 
-    }
-    
-    .sous-menu-container::after {
-      content: "";
-      flex: auto;
-    }
+
+  .sous-menu-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 50px;
   }
+
+  .container-formulaire {
+    width: 90vw;
+  }
+
+  .sous-menu-container::after {
+    content: "";
+    flex: auto;
+  }
+
 }

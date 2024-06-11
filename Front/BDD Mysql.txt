@@ -70,22 +70,15 @@ CREATE Table race(
 );
 /* 2024-05-27 15:42:43 [468 ms] */ 
 
-CREATE Table image_animal(
-    image_id INT PRIMARY KEY AUTO_INCREMENT,
-    image_data LONGBLOB
-);
-/* 2024-05-27 15:43:43 [4059 ms] */ 
-
 CREATE Table animal(
     animal_id INT PRIMARY KEY AUTO_INCREMENT,
     prenom VARCHAR(50)NOT NULL,
     etat VARCHAR(50),
     nourriture VARCHAR(50),
     grammage VARCHAR(50),
-    image_id INT,
+    image_path VARCHAR(100),
     race_id INT,
     habitat_id INT,
-    Foreign Key (image_id) REFERENCES image_animal (image_id),
     Foreign Key (race_id) REFERENCES race (race_id),
     Foreign Key (habitat_id) REFERENCES habitats (habitat_id)
 );

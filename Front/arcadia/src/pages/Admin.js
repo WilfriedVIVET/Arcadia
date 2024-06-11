@@ -109,7 +109,7 @@ const Admin = () => {
   ];
 
   return (
-    <div className="container-admin">
+    <div className="body-container">
       <div className="admin">
         <Navbar />
         <div className="sous-menu">

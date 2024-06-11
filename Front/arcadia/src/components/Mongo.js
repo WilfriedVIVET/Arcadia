@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { isEmpty } from "../Utils/Utils";
 
-const MONGO_URL = process.env.MONGO_URL || "http://localhost:3006/animals";
+const MONGO_URL = process.env.REACT_APP_MONGO_URL; //|| "http://localhost:3006/animals";
 
 const Mongo = () => {
   const [animals, setAnimals] = useState([]);
@@ -16,9 +16,11 @@ const Mongo = () => {
     const fetchAnimals = async () => {
       try {
         const response = await axios.get(MONGO_URL);
+
         setAnimals(response.data);
       } catch (error) {
         setError(error.message);
+        console.log(error.message + " url " + MONGO_URL);
       }
     };
 
@@ -54,7 +56,7 @@ const Mongo = () => {
       <div className="header-formulaire">
         <span>Consultation</span>
       </div>
-      <table className="tableau-admin">
+      <table className="tableau-consultation">
         <thead>
           <tr>
             <th onClick={() => requestSort("prenom")}>PRENOM</th>
@@ -71,7 +73,7 @@ const Mongo = () => {
             ))}
         </tbody>
       </table>
-      {error && <p>{error}</p>}
+      {error && <p>Payez un abonnement pour y avoir accès</p>}
     </div>
   );
 };

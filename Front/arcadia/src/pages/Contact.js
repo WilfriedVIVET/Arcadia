@@ -38,57 +38,55 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <div className="body-container">
-        <Navbar />
-        <div className="container-formulaire">
-          <div className="header-formulaire">
-            <span>CONTACTEZ-NOUS:</span>
-          </div>
-          <form onSubmit={submitContact} className="formulaire">
-            <label htmlFor="titre" className="label-formulaire">
-              Titre:
-            </label>
-            <input
-              type="text"
-              name="titre"
-              className="input-formulaire"
-              id="titre"
-              onChange={handleContact}
-            />
-
-            <label htmlFor="description" className="label-formulaire">
-              Description:
-            </label>
-            <textarea
-              name="description"
-              className="textArea-formulaire"
-              rows={4}
-              cols={35}
-              id="description"
-              maxLength="250"
-              onChange={handleContact}
-            />
-
-            <label htmlFor="email" className="label-formulaire">
-              Email:
-            </label>
-            <input
-              type="text"
-              name="email"
-              className="input-formulaire"
-              id="email"
-              onChange={handleContact}
-            />
-
-            <button className="button-formulaire" type="submit">
-              Envoyer
-            </button>
-          </form>
+    <div className="body-container">
+      <Navbar />
+      <div className="container-formulaire">
+        <div className="header-formulaire">
+          <span>CONTACTEZ-NOUS:</span>
         </div>
+        <form onSubmit={submitContact} className="formulaire">
+          <label htmlFor="titre" className="label-formulaire">
+            Titre:
+          </label>
+          <input
+            type="text"
+            name="titre"
+            className="input-formulaire"
+            id="titre"
+            onChange={handleContact}
+          />
+
+          <label htmlFor="description" className="label-formulaire">
+            Description:
+          </label>
+          <textarea
+            name="description"
+            className="textArea-formulaire"
+            rows={4}
+            cols={35}
+            id="description"
+            maxLength="250"
+            onChange={handleContact}
+          />
+
+          <label htmlFor="email" className="label-formulaire">
+            Email:
+          </label>
+          <input
+            type="text"
+            name="email"
+            className="input-formulaire"
+            id="email"
+            onChange={handleContact}
+          />
+
+          <button className="button-formulaire" type="submit">
+            Envoyer
+          </button>
+        </form>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

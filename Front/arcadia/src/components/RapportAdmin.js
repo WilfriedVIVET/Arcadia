@@ -35,7 +35,7 @@ const RapportAdmin = () => {
       {isEmpty(sortedRapports) ? (
         <p>Aucun rapport disponible</p>
       ) : (
-        <table className="tableau-admin">
+        <table className="tableau-rapport">
           <thead>
             <tr>
               <th onClick={() => requestSort("rapport_id")}>Rapport_id</th>

@@ -12,6 +12,7 @@ let mongooseConnection;
 (async () => {
   try {
     mongooseConnection = await connectDB();
+    console.log("test");
   } catch (error) {
     console.error("Erreur de connexion à MongoDB", error);
     process.exit(1);
