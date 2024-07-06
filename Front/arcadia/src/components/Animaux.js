@@ -32,7 +32,7 @@ const Animaux = () => {
   });
 
   //Récupération de l id de l animal à supprimer.
-  const [animaIdSelected, setAnimalIdSelected] = useState({
+  const [animalIdSelected, setAnimalIdSelected] = useState({
     animal_id: "",
   });
 
@@ -141,9 +141,9 @@ const Animaux = () => {
   };
 
   //Suppression de l'animal
-  const handleDeleteAnimal = () => {
-    deleteAnimal(animaIdSelected);
-    dispatch(getAnimaux);
+  const handleDeleteAnimal = async () => {
+    await deleteAnimal(animalIdSelected);
+    dispatch(getAnimaux());
   };
 
   // Style personnalisé pour les options et le contrôle
@@ -183,7 +183,7 @@ const Animaux = () => {
 
       <form onSubmit={submitAnimal} className="formulaire">
         <label htmlFor="prenom" className="label-formulaire">
-          Prenom:
+          Prénom:
         </label>
         <input
           type="text"

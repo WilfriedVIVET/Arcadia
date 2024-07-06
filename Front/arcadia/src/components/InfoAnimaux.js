@@ -58,7 +58,6 @@ const InfoAnimaux = () => {
     : [];
 
   // Style personnalisé pour les options et le contrôle
-
   const customStyles = {
     control: (provided) => ({
       ...provided,

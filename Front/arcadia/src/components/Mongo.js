@@ -56,7 +56,7 @@ const Mongo = () => {
       <div className="header-formulaire">
         <span>Consultation</span>
       </div>
-      <table className="tableau-consultation">
+      <table className="tableau-consultationgit">
         <thead>
           <tr>
             <th onClick={() => requestSort("prenom")}>PRENOM</th>

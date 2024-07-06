@@ -49,9 +49,13 @@ const VignetteHabitatComplet = ({ habitat }) => {
   }, [selectedAnimal]);
 
   //Remplissage info animal dans vignette.
-  const handleInfo = (animal) => {
-    setSelectedAnimal(animal);
-    setImagePath(animal.image_path);
+  const handleInfo = async (animal) => {
+    await new Promise((resolve) => {
+      setSelectedAnimal(animal);
+      resolve();
+    });
+    const imagePath = `${process.env.REACT_APP_API}/${animal.image_path}`;
+    setImagePath(imagePath);
   };
 
   // Mise à jour de l'image lorsque selectedAnimal change.
@@ -71,7 +75,7 @@ const VignetteHabitatComplet = ({ habitat }) => {
     }
   }, [selectedAnimal, animaux]);
 
-  //déploiement de la fenetre info.
+  //déploiement de la fenêtre info.
   const toggleInfo = () => {
     setShowInfo(!showInfo);
   };
@@ -85,7 +89,7 @@ const VignetteHabitatComplet = ({ habitat }) => {
     <div className="habitat">
       <span>{habitat.nom}</span>
       <img
-        src={`data:image/jpg;base64,${habitat.image_data}`}
+        src={`${process.env.REACT_APP_API}/${habitat.image_path}`}
         alt={`habitat ${habitat.nom}`}
         onClick={toggleInfo}
       />
@@ -94,7 +98,7 @@ const VignetteHabitatComplet = ({ habitat }) => {
         style={{ display: showInfo ? "flex" : "none" }}
       >
         <span>Description:</span>
-        <p className="description">{habitat.description}</p>
+        <p className="description">{habitat.descriptionHabitat}</p>
         <div className="trait"></div>
         <span>Nos Pensionnaires:</span>
         <div className="info">

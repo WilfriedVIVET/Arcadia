@@ -1,11 +1,12 @@
 import React from "react";
 
 const VignetteHabitat = ({ habitat }) => {
+  console.log("test path ", habitat.image_path);
   return (
     <div className="habitat">
       <span className="span-habitat">{habitat.nom}</span>
       <img
-        src={`data:image/jpg;base64,${habitat.image_data}`}
+        src={`${process.env.REACT_APP_API}/${habitat.image_path}`}
         alt={habitat.nom}
       />
     </div>

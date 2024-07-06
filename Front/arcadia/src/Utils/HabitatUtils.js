@@ -7,7 +7,7 @@ export const postEtatHabitat = async (newEtat) => {
       process.env.REACT_APP_API + "/Post/postEtat.php",
       JSON.stringify(newEtat)
     );
-    return response.data.message;
+    alert(JSON.stringify(response.data));
   } catch (error) {
     alert(error.message);
     throw error;
@@ -21,7 +21,7 @@ export const postHabitat = async (newHabitat) => {
       process.env.REACT_APP_API + "/Post/postHabitat.php",
       JSON.stringify(newHabitat)
     );
-    return response.data.message;
+    alert(JSON.stringify(response.data));
   } catch (error) {
     alert(error.message);
     throw error;
@@ -33,6 +33,20 @@ export const deleteHabitat = async (habitat) => {
   try {
     const response = await axios.post(
       process.env.REACT_APP_API + "/Delete/deleteHabitat.php",
+      JSON.stringify(habitat)
+    );
+    alert(JSON.stringify(response.data));
+  } catch (error) {
+    alert(error.message);
+    throw error;
+  }
+};
+
+//Modification d'un habitat.
+export const updateHabitat = async (habitat) => {
+  try {
+    const response = await axios.post(
+      process.env.REACT_APP_API + "/Update/updateHabitat.php",
       JSON.stringify(habitat)
     );
     alert(JSON.stringify(response.data));
